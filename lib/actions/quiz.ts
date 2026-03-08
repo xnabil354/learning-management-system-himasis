@@ -1,0 +1,153 @@
+"use server";
+
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { client, writeClient } from "@/sanity/lib/client";
+import { awardXP } from "@/lib/actions/gamification";
+
+interface QuizAnswer {
+  questionIndex: number;
+  selectedOptionIndex: number;
+  isCorrect: boolean;
+}
+
+interface QuizResult {
+  _id: string;
+  clerkUserId: string;
+  lessonId: string;
+  lessonTitle: string;
+  score: number;
+  correctAnswers: number;
+  totalQuestions: number;
+  answers: QuizAnswer[];
+  completedAt: string;
+  attempts: number;
+}
+
+export async function submitQuiz(
+  lessonId: string,
+  lessonTitle: string,
+  answers: QuizAnswer[],
+  totalQuestions: number,
+): Promise<{
+  success: boolean;
+  score: number;
+  correctAnswers: number;
+  xpGained?: number;
+  newBadges?: string[];
+  isNewBest: boolean;
+}> {
+  const { userId } = await auth();
+  if (!userId) {
+    return { success: false, score: 0, correctAnswers: 0, isNewBest: false };
+  }
+
+  const correctAnswers = answers.filter((a) => a.isCorrect).length;
+  const score = Math.round((correctAnswers / totalQuestions) * 100);
+
+  const existing = await client.fetch<QuizResult | null>(
+    `*[_type == "quizResult" && clerkUserId == $userId && lessonId == $lessonId][0]`,
+    { userId, lessonId },
+  );
+
+  const isNewBest = !existing || score > (existing.score ?? 0);
+  const attempt = existing ? (existing.attempts ?? 1) + 1 : 1;
+
+  if (existing) {
+    if (isNewBest) {
+      await writeClient
+        .patch(existing._id)
+        .set({
+          score,
+          correctAnswers,
+          totalQuestions,
+          answers: answers.map((a, i) => ({
+            _type: "object",
+            _key: `ans-${i}`,
+            ...a,
+          })),
+          completedAt: new Date().toISOString(),
+          attempts: attempt,
+        })
+        .commit();
+    } else {
+      await writeClient.patch(existing._id).set({ attempts: attempt }).commit();
+    }
+  } else {
+    await writeClient.create({
+      _type: "quizResult",
+      clerkUserId: userId,
+      lessonId,
+      lessonTitle,
+      score,
+      correctAnswers,
+      totalQuestions,
+      answers: answers.map((a, i) => ({
+        _type: "object",
+        _key: `ans-${i}`,
+        ...a,
+      })),
+      completedAt: new Date().toISOString(),
+      attempts: 1,
+    });
+  }
+
+  let xpGained: number | undefined;
+  let newBadges: string[] | undefined;
+
+  if (!existing || isNewBest) {
+    try {
+      const user = await currentUser();
+      const userName = user?.firstName
+        ? `${user.firstName}${user.lastName ? ` ${user.lastName}` : ""}`
+        : "Student";
+      const userImage = user?.imageUrl;
+
+      const result = await awardXP(userId, "lesson", userName, userImage);
+      xpGained = score === 100 ? 15 : 0;
+      if (score === 100) {
+        const { writeClient: wc } = await import("@/sanity/lib/client");
+        const progress = await client.fetch<{
+          _id: string;
+          totalXp: number;
+        } | null>(
+          `*[_type == "userProgress" && clerkUserId == $userId][0]{ _id, totalXp }`,
+          { userId },
+        );
+        if (progress) {
+          await wc.patch(progress._id).inc({ totalXp: 15 }).commit();
+          xpGained = 15;
+        }
+      }
+
+      newBadges = result.newBadges;
+    } catch (err) {
+      console.error("Quiz XP award error:", err);
+    }
+  }
+
+  return {
+    success: true,
+    score,
+    correctAnswers,
+    xpGained,
+    newBadges,
+    isNewBest,
+  };
+}
+
+export async function getQuizResult(
+  lessonId: string,
+): Promise<QuizResult | null> {
+  const { userId } = await auth();
+  if (!userId) return null;
+
+  return client.fetch<QuizResult | null>(
+    `*[_type == "quizResult" && clerkUserId == $userId && lessonId == $lessonId][0]{
+      _id, clerkUserId, lessonId, lessonTitle,
+      score, correctAnswers, totalQuestions,
+      answers[]{ questionIndex, selectedOptionIndex, isCorrect },
+      completedAt, attempts
+    }`,
+    { userId, lessonId },
+  );
+}
