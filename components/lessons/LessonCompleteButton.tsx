@@ -20,37 +20,40 @@ export function LessonCompleteButton({
   const [isPending, startTransition] = useTransition();
 
   const handleToggle = () => {
+    if (isCompleted) return; // Prevent untoggling
     startTransition(async () => {
       const result = await toggleLessonCompletion(
         lessonId,
         lessonSlug,
-        !isCompleted,
+        true, // Always force true when clicked
       );
       if (result.success) {
-        setIsCompleted(result.isCompleted);
+        setIsCompleted(true);
       }
     });
   };
 
   return (
-    <Button
-      onClick={handleToggle}
-      disabled={isPending}
-      variant={isCompleted ? "ghost" : "default"}
-      className={
-        isCompleted
-          ? "bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 hover:text-emerald-300"
-          : "bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0"
-      }
-    >
-      {isPending ? (
-        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-      ) : isCompleted ? (
-        <CheckCircle2 className="w-4 h-4 mr-2" />
+    <div className="flex items-center gap-4">
+      {isCompleted ? (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-medium text-sm">
+          <CheckCircle2 className="w-4 h-4" />
+          Completed
+        </div>
       ) : (
-        <Circle className="w-4 h-4 mr-2" />
+        <Button
+          onClick={handleToggle}
+          disabled={isPending}
+          className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0"
+        >
+          {isPending ? (
+            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+          ) : (
+            <Circle className="w-4 h-4 mr-2" />
+          )}
+          Mark as Complete
+        </Button>
       )}
-      {isCompleted ? "Completed" : "Mark as Complete"}
-    </Button>
+    </div>
   );
 }

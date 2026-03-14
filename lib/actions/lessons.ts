@@ -40,18 +40,16 @@ export async function toggleLessonCompletion(
   }
 
   try {
-    if (markComplete) {
-      await writeClient
-        .patch(lessonId)
-        .setIfMissing({ completedBy: [] })
-        .append("completedBy", [userId])
-        .commit();
-    } else {
-      await writeClient
-        .patch(lessonId)
-        .unset([`completedBy[@ == "${userId}"]`])
-        .commit();
+    if (!markComplete) {
+      // Prevent un-completing lessons
+      return { success: false, isCompleted: true };
     }
+
+    await writeClient
+      .patch(lessonId)
+      .setIfMissing({ completedBy: [] })
+      .append("completedBy", [userId])
+      .commit();
 
     revalidatePath(`/lessons/${lessonSlug}`);
     revalidatePath("/dashboard");
