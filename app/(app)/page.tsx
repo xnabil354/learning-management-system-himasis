@@ -210,7 +210,7 @@ export default async function Home() {
                       <Trophy className="w-6 h-6 text-fuchsia-400" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">
-                      Sertifikasi Keahlian
+                      Sertifikat Pembelajaran
                     </h3>
                     <p className="text-zinc-400 leading-relaxed">
                       Selesaikan seluruh modul kursus dan dapatkan sertifikat
