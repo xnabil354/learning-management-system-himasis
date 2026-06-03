@@ -45,12 +45,12 @@ export function Header() {
 
       <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <SignedOut>
-          <div className="flex items-center gap-8 text-sm text-zinc-400">
+          <div className="flex items-center gap-8 text-sm text-slate-400">
             {loggedOutLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-slate-900 transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -73,8 +73,8 @@ export function Header() {
                   className={cn(
                     "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                     isActive
-                      ? "bg-violet-500/10 text-violet-300"
-                      : "text-zinc-400 hover:text-white hover:bg-zinc-800/50",
+                      ? "bg-blue-50 text-blue-700"
+                      : "text-slate-400 hover:text-slate-900 hover:bg-slate-100",
                   )}
                 >
                   <Icon className="w-4 h-4" />
@@ -93,20 +93,20 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-zinc-400 hover:text-white hover:bg-zinc-800/50"
+                className="text-slate-400 hover:text-slate-900 hover:bg-slate-100"
               >
                 <Menu className="w-5 h-5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="bg-zinc-900 border-zinc-800"
+              className="bg-white border-slate-200"
             >
               {loggedOutLinks.map((link) => (
                 <DropdownMenuItem key={link.href} asChild>
                   <Link
                     href={link.href}
-                    className="text-zinc-300 cursor-pointer"
+                    className="text-slate-600 cursor-pointer"
                   >
                     {link.label}
                   </Link>
@@ -118,13 +118,13 @@ export function Header() {
           <SignInButton mode="modal">
             <Button
               variant="ghost"
-              className="text-zinc-400 hover:text-white hover:bg-white/5"
+              className="text-slate-500 hover:text-slate-900 hover:bg-slate-100"
             >
               Sign in
             </Button>
           </SignInButton>
           <Link href="/dashboard" className="hidden sm:block">
-            <Button className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-lg shadow-violet-600/25">
+            <Button className="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white border-0 shadow-lg shadow-blue-600/25">
               Start Learning
             </Button>
           </Link>
@@ -136,14 +136,14 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-zinc-400 hover:text-white hover:bg-zinc-800/50"
+                className="text-slate-400 hover:text-slate-900 hover:bg-slate-100"
               >
                 <Menu className="w-5 h-5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="bg-zinc-900 border-zinc-800"
+              className="bg-white border-slate-200"
             >
               {loggedInLinks.map((link) => {
                 const Icon = link.icon;
@@ -158,7 +158,7 @@ export function Header() {
                       href={link.href}
                       className={cn(
                         "flex items-center gap-2 cursor-pointer",
-                        isActive ? "text-violet-300" : "text-zinc-300",
+                        isActive ? "text-blue-700" : "text-slate-600",
                       )}
                     >
                       <Icon className="w-4 h-4" />
@@ -173,7 +173,7 @@ export function Header() {
           <UserButton
             appearance={{
               elements: {
-                avatarBox: "w-9 h-9 ring-2 ring-violet-500/20",
+                avatarBox: "w-9 h-9 ring-2 ring-blue-500/20",
               },
             }}
           />

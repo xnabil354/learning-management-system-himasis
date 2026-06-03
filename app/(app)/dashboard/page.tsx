@@ -141,22 +141,11 @@ export default async function DashboardPage() {
       : "/dashboard/courses";
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-violet-500/30 flex overflow-hidden font-sans antialiased">
+    <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-100 flex overflow-hidden font-sans antialiased">
       {}
-      <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none z-0" />
-      <div className="fixed inset-0 bg-[#050505] z-[-2]" />
-
-      {}
-      <div className="fixed top-[-20%] left-[-10%] w-[1000px] h-[1000px] bg-violet-600/10 rounded-full blur-[120px] animate-pulse pointer-events-none z-[-1]" />
-      <div
-        className="fixed bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-fuchsia-600/10 rounded-full blur-[120px] animate-pulse pointer-events-none z-[-1]"
-        style={{ animationDelay: "2s" }}
-      />
-
-      {}
-      <aside className="hidden lg:flex w-72 flex-col fixed inset-y-0 left-0 border-r border-white/[0.06] bg-black/40 backdrop-blur-2xl z-50 transition-all duration-300">
+      <aside className="hidden lg:flex w-72 flex-col fixed inset-y-0 left-0 border-r border-slate-200 bg-white z-50 transition-all duration-300">
         {}
-        <div className="h-20 flex items-center px-6 border-b border-white/[0.06]">
+        <div className="h-20 flex items-center px-6 border-b border-slate-200">
           <Logo />
         </div>
 
@@ -164,30 +153,29 @@ export default async function DashboardPage() {
         <div className="p-4 space-y-6 flex-1 overflow-y-auto custom-scrollbar">
           {}
           <div>
-            <h3 className="px-3 text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-3">
+            <h3 className="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">
               Platform
             </h3>
             <div className="space-y-1">
-              <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/[0.08] text-white font-medium border border-white/[0.08] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] relative group overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 bg-violet-400 rounded-full shadow-[0_0_10px_rgba(167,139,250,0.5)]" />
-                <LayoutDashboard className="w-4 h-4 text-violet-200" />
+              <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl bg-blue-50 text-blue-700 font-medium border border-blue-100 shadow-sm relative group overflow-hidden">
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 bg-blue-600 rounded-full" />
+                <LayoutDashboard className="w-4 h-4 text-blue-600" />
                 <span className="relative z-10">Dashboard</span>
               </button>
 
               <Link
                 href="/dashboard/courses"
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.04] transition-all font-medium group"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-all font-medium group"
               >
-                <Compass className="w-4 h-4 group-hover:text-violet-200 transition-colors" />
+                <Compass className="w-4 h-4 group-hover:text-blue-600 transition-colors" />
                 <span>Browse</span>
               </Link>
 
               <Link
                 href="/leaderboard"
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.04] transition-all font-medium group"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-all font-medium group"
               >
-                <Trophy className="w-4 h-4 group-hover:text-amber-400 transition-colors" />
+                <Trophy className="w-4 h-4 group-hover:text-amber-500 transition-colors" />
                 <span>Leaderboard</span>
               </Link>
             </div>
@@ -196,9 +184,9 @@ export default async function DashboardPage() {
           {}
           {activeCourses.length > 0 && (
             <div>
-              <h3 className="px-3 text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-3 flex items-center justify-between">
+              <h3 className="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center justify-between">
                 <span>Active Learning</span>
-                <span className="bg-violet-500/20 text-violet-300 px-1.5 py-0.5 rounded text-[9px]">
+                <span className="bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded text-[9px] border border-blue-100">
                   {activeCourses.length}
                 </span>
               </h3>
@@ -207,20 +195,20 @@ export default async function DashboardPage() {
                   <Link
                     key={course.slug.current}
                     href={`/courses/${course.slug.current}`}
-                    className="group w-full flex flex-col gap-2 px-3 py-2.5 rounded-xl text-zinc-400 hover:bg-white/[0.04] transition-all"
+                    className="group w-full flex flex-col gap-2 px-3 py-2.5 rounded-xl text-slate-500 hover:bg-slate-50 transition-all"
                   >
                     <div className="flex items-center justify-between w-full">
-                      <span className="text-xs font-medium text-zinc-300 group-hover:text-white truncate max-w-[140px]">
+                      <span className="text-xs font-medium text-slate-600 group-hover:text-slate-900 truncate max-w-[140px]">
                         {course.title}
                       </span>
-                      <span className="text-[10px] font-mono text-violet-400">
+                      <span className="text-[10px] font-mono text-blue-600">
                         {course.progress}%
                       </span>
                     </div>
                     {}
-                    <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                    <div className="w-full h-1 bg-slate-200 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-violet-500 group-hover:bg-violet-400 transition-all duration-500"
+                        className="h-full bg-blue-600 group-hover:bg-blue-500 transition-all duration-500"
                         style={{ width: `${course.progress}%` }}
                       />
                     </div>
@@ -232,38 +220,38 @@ export default async function DashboardPage() {
 
           {}
           <div>
-            <h3 className="px-3 text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-3">
+            <h3 className="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">
               Your Stats
             </h3>
             <div className="space-y-2 px-1">
-              <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.04]">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                  <Clock className="w-3.5 h-3.5 text-emerald-400" />
+              <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
+                  <Clock className="w-3.5 h-3.5 text-emerald-600" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-white">
+                  <p className="text-xs font-bold text-slate-900">
                     {hoursLearned}h
                   </p>
-                  <p className="text-[10px] text-zinc-500">Hours Learned</p>
+                  <p className="text-[10px] text-slate-400">Hours Learned</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.04]">
-                <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                  <Zap className="w-3.5 h-3.5 text-amber-400" />
+              <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center">
+                  <Zap className="w-3.5 h-3.5 text-amber-600" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-white">
+                  <p className="text-xs font-bold text-slate-900">
                     {totalCompletedLessons}
                   </p>
-                  <p className="text-[10px] text-zinc-500">Lessons Done</p>
+                  <p className="text-[10px] text-slate-400">Lessons Done</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.04]">
-                <div className="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center">
-                  <Target className="w-3.5 h-3.5 text-violet-400" />
+              <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
+                  <Target className="w-3.5 h-3.5 text-blue-600" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-white">
+                  <p className="text-xs font-bold text-slate-900">
                     {enrichedCourses.length > 0
                       ? Math.round(
                           enrichedCourses.reduce(
@@ -274,7 +262,7 @@ export default async function DashboardPage() {
                       : 0}
                     %
                   </p>
-                  <p className="text-[10px] text-zinc-500">Avg. Progress</p>
+                  <p className="text-[10px] text-slate-400">Avg. Progress</p>
                 </div>
               </div>
             </div>
@@ -283,26 +271,26 @@ export default async function DashboardPage() {
           {}
           {completedCoursesCount > 0 && (
             <div>
-              <h3 className="px-3 text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-3">
+              <h3 className="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">
                 Achievements
               </h3>
-              <div className="mx-1 p-3 rounded-xl bg-gradient-to-br from-amber-500/10 via-yellow-500/5 to-transparent border border-amber-500/10">
+              <div className="mx-1 p-3 rounded-xl bg-gradient-to-br from-amber-50 via-yellow-50/50 to-transparent border border-amber-200">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center">
-                    <Trophy className="w-5 h-5 text-amber-400" />
+                  <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
+                    <Trophy className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-white">
+                    <p className="text-sm font-bold text-slate-900">
                       {completedCoursesCount}{" "}
                       {completedCoursesCount === 1 ? "Course" : "Courses"}
                     </p>
-                    <p className="text-[10px] text-amber-300/60">Completed</p>
+                    <p className="text-[10px] text-amber-600/70">Completed</p>
                   </div>
                 </div>
                 {completedCoursesCount >= 3 && (
-                  <div className="mt-2 pt-2 border-t border-amber-500/10 flex items-center gap-1.5">
-                    <Flame className="w-3 h-3 text-orange-400" />
-                    <span className="text-[10px] text-orange-300/70 font-medium">
+                  <div className="mt-2 pt-2 border-t border-amber-200 flex items-center gap-1.5">
+                    <Flame className="w-3 h-3 text-orange-500" />
+                    <span className="text-[10px] text-orange-500 font-medium">
                       On a learning streak!
                     </span>
                   </div>
@@ -316,16 +304,16 @@ export default async function DashboardPage() {
           <XPWidget userId={user.id} />
         </div>
 
-        <div className="p-4 border-t border-white/[0.06] bg-black/20">
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.08] transition-colors cursor-pointer group">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-violet-500 to-fuchsia-500 flex items-center justify-center text-xs font-bold text-white shadow-lg group-hover:scale-105 transition-transform">
+        <div className="p-4 border-t border-slate-200 bg-slate-50/50">
+          <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 hover:shadow-md transition-shadow cursor-pointer group">
+            <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-sky-500 flex items-center justify-center text-xs font-bold text-white shadow-lg group-hover:scale-105 transition-transform">
               {firstName[0]}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-white truncate group-hover:text-violet-200 transition-colors">
+              <p className="text-sm font-semibold text-slate-900 truncate group-hover:text-blue-600 transition-colors">
                 {firstName}
               </p>
-              <p className="text-[10px] text-zinc-500 truncate font-mono">
+              <p className="text-[10px] text-slate-400 truncate font-mono">
                 Student Account
               </p>
             </div>
@@ -344,25 +332,25 @@ export default async function DashboardPage() {
         {}
         <header className="h-20 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-40">
           {}
-          <div className="absolute inset-0 bg-black/0 backdrop-blur-md border-b border-white/[0.02]" />
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-md border-b border-slate-200/60" />
 
           {}
-          <div className="hidden lg:flex items-center text-zinc-500 text-xs font-medium gap-2 relative z-10">
-            <span className="hover:text-zinc-300 cursor-pointer transition-colors">
+          <div className="hidden lg:flex items-center text-slate-400 text-xs font-medium gap-2 relative z-10">
+            <span className="hover:text-slate-600 cursor-pointer transition-colors">
               Pages
             </span>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-white px-2 py-0.5 rounded-md bg-white/5 border border-white/5 backdrop-blur-sm shadow-sm">
+            <span className="text-slate-900 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200">
               Dashboard
             </span>
           </div>
 
           {}
           <div className="lg:hidden flex items-center gap-2 relative z-10">
-            <div className="w-7 h-7 rounded-lg bg-white text-black flex items-center justify-center font-bold">
+            <div className="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold">
               <Command className="w-4 h-4" />
             </div>
-            <span className="font-bold text-white tracking-tight">SISCA</span>
+            <span className="font-bold text-slate-900 tracking-tight">SMARTSIS</span>
           </div>
 
           {}
@@ -370,27 +358,27 @@ export default async function DashboardPage() {
             {}
             {}
             <div className="relative hidden sm:block group">
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-transparent rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <GlobalSearch />
             </div>
 
             {}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.05] text-xs font-medium">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-medium shadow-sm">
               {completedCoursesCount > 0 ? (
                 <>
-                  <Trophy className="w-3.5 h-3.5 text-amber-400" />
-                  <span className="text-amber-200">
+                  <Trophy className="w-3.5 h-3.5 text-amber-500" />
+                  <span className="text-amber-600">
                     {completedCoursesCount}
                   </span>
-                  <span className="text-zinc-600">/</span>
-                  <span className="text-zinc-400">
+                  <span className="text-slate-300">/</span>
+                  <span className="text-slate-500">
                     {enrichedCourses.length}
                   </span>
                 </>
               ) : (
                 <>
-                  <GraduationCap className="w-3.5 h-3.5 text-violet-400" />
-                  <span className="text-zinc-400">
+                  <GraduationCap className="w-3.5 h-3.5 text-blue-600" />
+                  <span className="text-slate-500">
                     {enrichedCourses.length} Courses
                   </span>
                 </>
@@ -402,27 +390,27 @@ export default async function DashboardPage() {
         <main className="px-6 lg:px-10 pb-10 max-w-[1600px] mx-auto w-full space-y-12">
           {}
           <div className="relative mt-4 group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-1000 animate-gradient-xy" />
-            <div className="relative p-8 md:p-10 rounded-2xl bg-[#09090b]/80 backdrop-blur-3xl border border-white/[0.08] overflow-hidden">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-sky-500 to-blue-600 rounded-3xl blur opacity-10 group-hover:opacity-20 transition-opacity duration-1000" />
+            <div className="relative p-8 md:p-10 rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-xl shadow-blue-500/5">
               {}
-              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-violet-600/10 to-transparent rounded-full blur-[80px]" />
-              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-fuchsia-600/10 to-transparent rounded-full blur-[80px]" />
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-blue-500/5 to-transparent rounded-full blur-[80px]" />
+              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-sky-500/5 to-transparent rounded-full blur-[80px]" />
 
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
                 <div className="space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-wider text-violet-300 mb-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[10px] font-bold uppercase tracking-wider text-blue-600 mb-2">
                     <Sparkles className="w-3 h-3 fill-current" />
                     <span>Premium Student Access</span>
                   </div>
-                  <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight">
+                  <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter leading-tight">
                     {greeting}, <br className="hidden md:block" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-violet-200 to-zinc-400">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-slate-400">
                       {firstName}
                     </span>
                   </h1>
-                  <p className="text-zinc-400 text-sm md:text-base max-w-lg leading-relaxed">
+                  <p className="text-slate-500 text-sm md:text-base max-w-lg leading-relaxed">
                     Ready to level up? You have{" "}
-                    <span className="text-white font-bold">
+                    <span className="text-slate-900 font-bold">
                       {courses.length} active courses
                     </span>{" "}
                     pending your attention today.
@@ -432,10 +420,9 @@ export default async function DashboardPage() {
                 <div className="flex items-center gap-4">
                   {}
                   <Link href={resumeLink}>
-                    <button className="relative group/btn overflow-hidden rounded-full bg-white text-black px-6 py-3 font-bold text-sm shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] transition-all duration-300">
-                      <div className="absolute inset-0 bg-gradient-to-r from-white via-zinc-200 to-white opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                    <button className="relative group/btn overflow-hidden rounded-full bg-blue-600 text-white px-6 py-3 font-bold text-sm shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:bg-blue-700 transition-all duration-300">
                       <span className="relative flex items-center gap-2">
-                        <Play className="w-4 h-4 fill-black" />
+                        <Play className="w-4 h-4 fill-white" />
                         Resume Learning
                       </span>
                     </button>
@@ -452,34 +439,34 @@ export default async function DashboardPage() {
                 label: "Active Courses",
                 value: courses.length,
                 icon: BookOpen,
-                color: "text-violet-400",
-                bg: "bg-violet-500/10",
+                color: "text-blue-600",
+                bg: "bg-blue-50",
               },
               {
                 label: "Hours Learned",
                 value: `${hoursLearned}h`,
                 icon: Clock,
-                color: "text-emerald-400",
-                bg: "bg-emerald-500/10",
+                color: "text-emerald-600",
+                bg: "bg-emerald-50",
               },
               {
                 label: "Lessons Completed",
                 value: totalCompletedLessons,
                 icon: Zap,
-                color: "text-amber-400",
-                bg: "bg-amber-500/10",
+                color: "text-amber-600",
+                bg: "bg-amber-50",
               },
             ].map((stat, i) => (
               <div
                 key={i}
-                className="group p-5 rounded-2xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-300 backdrop-blur-sm"
+                className="group p-5 rounded-2xl bg-white border border-slate-200 hover:shadow-lg hover:shadow-blue-500/5 hover:border-slate-300 transition-all duration-300"
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest mb-1">
+                    <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">
                       {stat.label}
                     </p>
-                    <p className="text-2xl font-bold text-white">
+                    <p className="text-2xl font-bold text-slate-900">
                       {stat.value}
                     </p>
                   </div>
@@ -495,19 +482,19 @@ export default async function DashboardPage() {
 
           {}
           <section className="space-y-6">
-            <div className="flex items-end justify-between border-b border-white/[0.06] pb-4">
+            <div className="flex items-end justify-between border-b border-slate-200 pb-4">
               <div>
-                <h2 className="text-xl font-bold text-white flex items-center gap-2 mb-1">
-                  <BookOpen className="w-5 h-5 text-violet-400" />
+                <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2 mb-1">
+                  <BookOpen className="w-5 h-5 text-blue-600" />
                   My Curriculum
                 </h2>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-slate-400">
                   Pick up where you left off
                 </p>
               </div>
               <Link
                 href="/dashboard/courses"
-                className="text-xs font-medium text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-1 group"
+                className="text-xs font-medium text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-1 group"
               >
                 View All{" "}
                 <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
@@ -522,7 +509,7 @@ export default async function DashboardPage() {
                     className="group relative block w-full h-full"
                   >
                     {}
-                    <div className="relative h-full flex flex-col rounded-2xl bg-[#0A0A0A]/60 backdrop-blur-xl border border-white/[0.06] overflow-hidden hover:border-white/[0.15] hover:bg-white/[0.03] transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-violet-900/20">
+                    <div className="relative h-full flex flex-col rounded-2xl bg-white border border-slate-200 overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500 hover:-translate-y-1">
                       {}
                       <Link
                         href={`/courses/${course.slug!.current!}`}
@@ -534,26 +521,22 @@ export default async function DashboardPage() {
                       </Link>
 
                       {}
-                      <div className="relative aspect-video w-full overflow-hidden bg-zinc-900">
+                      <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
                         {course.thumbnail?.asset?.url ? (
                           <img
                             src={course.thumbnail.asset.url}
                             alt={course.title}
-                            className="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            className="object-cover w-full h-full opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center relative">
-                            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10" />
-                            <BookOpen className="w-8 h-8 text-zinc-700" />
+                            <BookOpen className="w-8 h-8 text-slate-300" />
                           </div>
                         )}
 
                         {}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80" />
-
-                        {}
                         <div className="absolute top-3 right-3">
-                          <span className="text-[10px] font-bold text-white bg-black/60 backdrop-blur-md border border-white/10 px-2 py-1 rounded-lg">
+                          <span className="text-[10px] font-bold text-slate-700 bg-white/90 backdrop-blur-md border border-slate-200 px-2 py-1 rounded-lg shadow-sm">
                             {course.moduleCount ?? 1} Modules
                           </span>
                         </div>
@@ -561,25 +544,25 @@ export default async function DashboardPage() {
 
                       {}
                       <div className="p-5 flex flex-col flex-1 relative z-0">
-                        <h3 className="text-lg font-bold text-white leading-tight mb-2 line-clamp-1 group-hover:text-violet-200 transition-colors relative">
+                        <h3 className="text-lg font-bold text-slate-900 leading-tight mb-2 line-clamp-1 group-hover:text-blue-600 transition-colors relative">
                           {course.title}
                         </h3>
                         <div className="mt-auto pt-4 space-y-4">
-                          <div className="flex items-center justify-between text-[10px] uppercase font-bold text-zinc-500 tracking-wider">
+                          <div className="flex items-center justify-between text-[10px] uppercase font-bold text-slate-400 tracking-wider">
                             <span>Progress</span>
                             <span
                               className={
                                 course.progress === 100
-                                  ? "text-emerald-400"
-                                  : "text-violet-400"
+                                  ? "text-emerald-600"
+                                  : "text-blue-600"
                               }
                             >
                               {course.progress}%
                             </span>
                           </div>
-                          <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                          <div className="w-full h-1 bg-slate-200 rounded-full overflow-hidden">
                             <div
-                              className={`h-full transition-all duration-500 shadow-[0_0_10px_rgba(139,92,246,0.5)] ${course.progress === 100 ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" : "bg-violet-500 group-hover:bg-violet-400"}`}
+                              className={`h-full transition-all duration-500 ${course.progress === 100 ? "bg-emerald-500" : "bg-blue-600 group-hover:bg-blue-500"}`}
                               style={{ width: `${course.progress}%` }}
                             />
                           </div>
@@ -600,14 +583,14 @@ export default async function DashboardPage() {
                   </div>
                 ))
               ) : (
-                <div className="col-span-full py-20 text-center rounded-3xl bg-white/[0.02] border border-dashed border-white/[0.06] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white/5 border border-white/5 items-center justify-center mb-4 flex animate-pulse">
-                    <BookOpen className="w-6 h-6 text-zinc-600" />
+                <div className="col-span-full py-20 text-center rounded-3xl bg-white border border-dashed border-slate-300 flex flex-col items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-slate-100 border border-slate-200 items-center justify-center mb-4 flex animate-pulse">
+                    <BookOpen className="w-6 h-6 text-slate-400" />
                   </div>
-                  <h3 className="text-base font-medium text-white mb-1">
+                  <h3 className="text-base font-medium text-slate-900 mb-1">
                     No active courses
                   </h3>
-                  <p className="text-zinc-500 text-sm">
+                  <p className="text-slate-400 text-sm">
                     Start your journey today.
                   </p>
                 </div>

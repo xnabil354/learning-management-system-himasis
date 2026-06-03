@@ -34,11 +34,11 @@ export function LessonItem({
 
   return (
     <Link href={`/admin/lessons/${documentId}`}>
-      <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.04] hover:bg-white/[0.05] hover:border-white/[0.08] transition-all duration-200 cursor-pointer group">
+      <div className="p-3 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-200 transition-all duration-200 cursor-pointer group">
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 text-zinc-600">
+          <div className="flex items-center gap-2 text-slate-600">
             {index !== undefined && (
-              <span className="text-xs font-medium text-zinc-600 w-5">
+              <span className="text-xs font-medium text-slate-600 w-5">
                 {index + 1}.
               </span>
             )}
@@ -46,12 +46,12 @@ export function LessonItem({
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
               <Play className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-              <h4 className="font-medium text-zinc-300 text-sm truncate group-hover:text-white transition-colors">
+              <h4 className="font-medium text-slate-300 text-sm truncate group-hover:text-slate-900 transition-colors">
                 {lesson?.title || "Untitled Lesson"}
               </h4>
             </div>
             {lesson?.description && (
-              <p className="text-xs text-zinc-600 line-clamp-1 mt-0.5 ml-5">
+              <p className="text-xs text-slate-600 line-clamp-1 mt-0.5 ml-5">
                 {lesson.description}
               </p>
             )}
@@ -76,12 +76,12 @@ export function LessonItem({
             {hasSlug && (
               <Badge
                 variant="secondary"
-                className="bg-violet-500/10 text-violet-400 border-violet-500/20 text-xs px-1.5 py-0"
+                className="bg-blue-600/10 text-blue-600 border-blue-600/20 text-xs px-1.5 py-0"
               >
                 <Link2 className="h-3 w-3" />
               </Badge>
             )}
-            <ChevronRight className="h-4 w-4 text-zinc-700 group-hover:text-zinc-400 group-hover:translate-x-0.5 transition-all" />
+            <ChevronRight className="h-4 w-4 text-slate-700 group-hover:text-slate-400 group-hover:translate-x-0.5 transition-all" />
           </div>
         </div>
       </div>

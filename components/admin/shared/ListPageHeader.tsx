@@ -24,7 +24,7 @@ export function ListPageHeader({
           {title}
         </h1>
         {description && (
-          <p className="text-sm text-zinc-500 mt-1">{description}</p>
+          <p className="text-sm text-slate-500 mt-1">{description}</p>
         )}
       </div>
       {actionLabel && onAction && (
@@ -32,7 +32,7 @@ export function ListPageHeader({
           type="button"
           onClick={onAction}
           disabled={isLoading}
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-500 disabled:opacity-50 rounded-lg transition-all duration-200"
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-700 hover:bg-blue-600 disabled:opacity-50 rounded-lg transition-all duration-200"
         >
           {isLoading ? (
             <Loader2 className="h-4 w-4 animate-spin" />

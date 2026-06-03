@@ -6,7 +6,7 @@ export function DocumentListSkeleton() {
   return (
     <div className="space-y-2">
       {[1, 2, 3].map((i) => (
-        <Skeleton key={i} className="h-16 w-full bg-white/[0.04] rounded-xl" />
+        <Skeleton key={i} className="h-16 w-full bg-slate-50 rounded-xl" />
       ))}
     </div>
   );
@@ -14,12 +14,12 @@ export function DocumentListSkeleton() {
 
 export function DocumentCardSkeleton() {
   return (
-    <div className="rounded-xl bg-white/[0.02] border border-white/[0.06] overflow-hidden">
-      <Skeleton className="h-36 w-full bg-white/[0.04]" />
+    <div className="rounded-xl bg-white border border-slate-200 overflow-hidden">
+      <Skeleton className="h-36 w-full bg-slate-50" />
       <div className="p-5 space-y-3">
-        <Skeleton className="h-5 w-3/4 bg-white/[0.04] rounded" />
-        <Skeleton className="h-4 w-full bg-white/[0.04] rounded" />
-        <Skeleton className="h-4 w-1/2 bg-white/[0.04] rounded" />
+        <Skeleton className="h-5 w-3/4 bg-slate-50 rounded" />
+        <Skeleton className="h-4 w-full bg-slate-50 rounded" />
+        <Skeleton className="h-4 w-1/2 bg-slate-50 rounded" />
       </div>
     </div>
   );
@@ -40,10 +40,10 @@ export function HierarchicalListSkeleton() {
     <div className="space-y-4">
       {[1, 2, 3].map((i) => (
         <div key={i} className="space-y-2">
-          <Skeleton className="h-12 w-full bg-white/[0.04] rounded-xl" />
+          <Skeleton className="h-12 w-full bg-slate-50 rounded-xl" />
           <div className="pl-4 space-y-2">
-            <Skeleton className="h-14 w-full bg-white/[0.03] rounded-lg" />
-            <Skeleton className="h-14 w-full bg-white/[0.03] rounded-lg" />
+            <Skeleton className="h-14 w-full bg-white rounded-lg" />
+            <Skeleton className="h-14 w-full bg-white rounded-lg" />
           </div>
         </div>
       ))}
@@ -56,10 +56,10 @@ export function ModuleListSkeleton() {
     <div className="space-y-4">
       {[1, 2, 3].map((i) => (
         <div key={i} className="space-y-2">
-          <Skeleton className="h-12 w-full bg-white/[0.04] rounded-xl" />
+          <Skeleton className="h-12 w-full bg-slate-50 rounded-xl" />
           <div className="pl-4 space-y-2">
-            <Skeleton className="h-16 w-full bg-white/[0.03] rounded-lg" />
-            <Skeleton className="h-16 w-full bg-white/[0.03] rounded-lg" />
+            <Skeleton className="h-16 w-full bg-white rounded-lg" />
+            <Skeleton className="h-16 w-full bg-white rounded-lg" />
           </div>
         </div>
       ))}

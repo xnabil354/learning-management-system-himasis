@@ -58,7 +58,7 @@ export async function sendCourseAnnouncement(
               firstName: u.firstName || "Mahasiswa",
               courseTitle,
               courseDescription:
-                courseDescription || "Course baru tersedia di SISCA.",
+                courseDescription || "Course baru tersedia di SMARTSIS.",
               courseUrl: `${APP_URL}/courses/${courseSlug}`,
             }),
           }),

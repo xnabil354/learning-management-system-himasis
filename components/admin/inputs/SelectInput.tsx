@@ -32,8 +32,8 @@ interface SelectInputProps extends DocumentHandle {
 function SelectInputFallback({ label }: { label: string }) {
   return (
     <div className="space-y-2">
-      <Label className="text-zinc-300">{label}</Label>
-      <Skeleton className="h-10 w-full bg-white/[0.05]" />
+      <Label className="text-slate-300">{label}</Label>
+      <Skeleton className="h-10 w-full bg-slate-50" />
     </div>
   );
 }
@@ -51,7 +51,7 @@ function SelectInputField({
   if (options.length <= 4) {
     return (
       <div className="space-y-3">
-        <Label className="text-zinc-300">{label}</Label>
+        <Label className="text-slate-300">{label}</Label>
         <RadioGroup
           value={(value as string) ?? ""}
           onValueChange={(newValue) => editValue(newValue)}
@@ -62,12 +62,12 @@ function SelectInputField({
               <RadioGroupItem
                 value={option.value}
                 id={`${path}-${option.value}`}
-                className="border-zinc-600 text-violet-500"
+                className="border-slate-600 text-blue-600"
               />
 
               <Label
                 htmlFor={`${path}-${option.value}`}
-                className="font-normal cursor-pointer text-zinc-300"
+                className="font-normal cursor-pointer text-slate-300"
               >
                 {option.label}
               </Label>
@@ -80,7 +80,7 @@ function SelectInputField({
 
   return (
     <div className="space-y-2">
-      <Label htmlFor={path} className="text-zinc-300">
+      <Label htmlFor={path} className="text-slate-300">
         {label}
       </Label>
       <Select
@@ -89,16 +89,16 @@ function SelectInputField({
       >
         <SelectTrigger
           id={path}
-          className="bg-white/[0.04] border-white/[0.08] text-zinc-300"
+          className="bg-slate-50 border-slate-200 text-slate-300"
         >
           <SelectValue placeholder={placeholder ?? "Select an option"} />
         </SelectTrigger>
-        <SelectContent className="bg-white/[0.05] border-white/[0.08]">
+        <SelectContent className="bg-slate-50 border-slate-200">
           {options.map((option) => (
             <SelectItem
               key={option.value}
               value={option.value}
-              className="text-zinc-300 focus:bg-zinc-700 focus:text-white"
+              className="text-slate-300 focus:bg-slate-700 focus:text-white"
             >
               {option.label}
             </SelectItem>

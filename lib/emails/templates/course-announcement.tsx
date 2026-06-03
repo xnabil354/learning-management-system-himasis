@@ -29,7 +29,7 @@ export function CourseAnnouncementEmail({
       <Body style={main}>
         <Container style={container}>
           <Section style={headerSection}>
-            <Text style={logo}>🎓 SISCA</Text>
+            <Text style={logo}>🎓 SMARTSIS</Text>
             <Text style={subtitle}>HIMASIS E-Learning</Text>
           </Section>
 
@@ -46,7 +46,7 @@ export function CourseAnnouncementEmail({
             </Section>
 
             <Text style={paragraph}>
-              Course baru telah ditambahkan ke platform SISCA. Mulai belajar
+              Course baru telah ditambahkan ke platform SMARTSIS. Mulai belajar
               sekarang dan tingkatkan kemampuanmu!
             </Text>
 
@@ -93,7 +93,7 @@ const headerSection = {
 const logo = {
   fontSize: "28px",
   fontWeight: "800" as const,
-  color: "#a78bfa",
+  color: "#60a5fa",
   margin: "0",
 };
 
@@ -117,7 +117,7 @@ const contentSection = {
 const badge = {
   fontSize: "11px",
   fontWeight: "700" as const,
-  color: "#7c3aed",
+  color: "#1d4ed8",
   backgroundColor: "#7c3aed20",
   border: "1px solid #7c3aed40",
   borderRadius: "4px",
@@ -169,7 +169,7 @@ const buttonSection = {
 };
 
 const button = {
-  backgroundColor: "#7c3aed",
+  backgroundColor: "#1d4ed8",
   borderRadius: "8px",
   color: "#ffffff",
   fontSize: "14px",

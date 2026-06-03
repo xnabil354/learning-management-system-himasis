@@ -15,7 +15,7 @@ export function OpenInStudio({ handle }: OpenInStudioProps) {
     <Link
       href={studioUrl}
       target="_blank"
-      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm text-zinc-400 hover:text-white border border-white/[0.08] hover:border-zinc-600 rounded-lg transition-colors"
+      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm text-slate-400 hover:text-slate-900 border border-slate-200 hover:border-slate-600 rounded-lg transition-colors"
     >
       <ExternalLink className="h-4 w-4" />
       Open in Studio

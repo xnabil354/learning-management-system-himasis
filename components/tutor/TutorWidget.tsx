@@ -15,7 +15,7 @@ function TutorPanel() {
         type="button"
         aria-label="Close chat"
         className={`
-          fixed inset-0 z-40 bg-black/40 backdrop-blur-sm
+          fixed inset-0 z-40 bg-white/80 backdrop-blur-sm
           transition-opacity duration-300 cursor-default
           ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}
         `}
@@ -70,7 +70,7 @@ function TutorPanel() {
               onClick={closeChat}
               className="
                 p-2.5 rounded-xl
-                text-slate-400 hover:text-white
+                text-slate-400 hover:text-slate-900
                 hover:bg-white/10
                 transition-colors
               "

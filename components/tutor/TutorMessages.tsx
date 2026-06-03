@@ -83,7 +83,7 @@ export function TutorMessages({ messages, isLoading }: TutorMessagesProps) {
                     ${
                       message.role === "assistant"
                         ? "bg-gradient-to-br from-cyan-400 to-blue-600"
-                        : "bg-gradient-to-br from-violet-500 to-fuchsia-600"
+                        : "bg-gradient-to-br from-blue-600 to-sky-600"
                     }
                   `}
                 >
@@ -100,7 +100,7 @@ export function TutorMessages({ messages, isLoading }: TutorMessagesProps) {
                     max-w-[85%] px-5 py-4 rounded-2xl text-base leading-relaxed
                     ${
                       message.role === "assistant"
-                        ? "bg-white/5 text-slate-200 rounded-tl-sm"
+                        ? "bg-slate-50 text-slate-200 rounded-tl-sm"
                         : "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-white rounded-tr-sm"
                     }
                   `}
@@ -119,7 +119,7 @@ export function TutorMessages({ messages, isLoading }: TutorMessagesProps) {
           <div className="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
             <Sparkles className="w-5 h-5 text-white" />
           </div>
-          <div className="bg-white/5 px-5 py-4 rounded-2xl rounded-tl-sm">
+          <div className="bg-slate-50 px-5 py-4 rounded-2xl rounded-tl-sm">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 bg-cyan-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
               <span className="w-2.5 h-2.5 bg-cyan-400 rounded-full animate-bounce [animation-delay:-0.15s]" />

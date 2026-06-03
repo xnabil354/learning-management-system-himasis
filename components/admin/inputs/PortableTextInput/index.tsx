@@ -37,8 +37,8 @@ interface PortableTextInputProps extends DocumentHandle {
 function PortableTextInputFallback({ label }: { label: string }) {
   return (
     <div className="space-y-2">
-      <Label className="text-zinc-300">{label}</Label>
-      <Skeleton className="h-64 w-full bg-white/[0.05] rounded-lg" />
+      <Label className="text-slate-300">{label}</Label>
+      <Skeleton className="h-64 w-full bg-slate-50 rounded-lg" />
     </div>
   );
 }
@@ -202,9 +202,9 @@ function PortableTextInputField({
 
   return (
     <div className="space-y-2">
-      <Label className="text-zinc-300">{label}</Label>
+      <Label className="text-slate-300">{label}</Label>
 
-      <div className="rounded-lg border border-white/[0.08] bg-white/[0.03] overflow-hidden">
+      <div className="rounded-lg border border-slate-200 bg-white overflow-hidden">
         <EditorProvider
           key={editorKey}
           initialConfig={{
@@ -214,7 +214,7 @@ function PortableTextInputField({
         >
           <EventListenerPlugin on={handleMutation} />
           <Toolbar onInsertImage={handleOpenImageModal} />
-          <div className="p-4 min-h-[200px] max-h-[500px] overflow-y-auto focus-within:ring-1 focus-within:ring-violet-500/50">
+          <div className="p-4 min-h-[200px] max-h-[500px] overflow-y-auto focus-within:ring-1 focus-within:ring-blue-600/50">
             <PortableTextEditable
               className="outline-none prose prose-invert max-w-none"
               renderStyle={renderStyle}
@@ -223,7 +223,7 @@ function PortableTextInputField({
               renderListItem={renderListItem}
               renderAnnotation={renderAnnotation}
               renderPlaceholder={() => (
-                <span className="text-zinc-500 pointer-events-none">
+                <span className="text-slate-500 pointer-events-none">
                   Start writing your content...
                 </span>
               )}
@@ -235,7 +235,7 @@ function PortableTextInputField({
       {}
       {showImageModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-          <div className="bg-white/[0.02] rounded-xl border border-white/[0.08] p-6 w-full max-w-md mx-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-6 w-full max-w-md mx-4">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold text-white">Insert Image</h3>
               <Button
@@ -243,7 +243,7 @@ function PortableTextInputField({
                 variant="ghost"
                 size="sm"
                 onClick={handleCloseImageModal}
-                className="h-8 w-8 p-0 text-zinc-400 hover:text-white"
+                className="h-8 w-8 p-0 text-slate-400 hover:text-slate-900"
               >
                 <X className="h-4 w-4" />
               </Button>
@@ -263,22 +263,22 @@ function PortableTextInputField({
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={isUploading}
-                className={`w-full border-2 border-dashed border-zinc-600 rounded-lg p-8 text-center cursor-pointer hover:border-zinc-500 transition-colors bg-transparent ${
+                className={`w-full border-2 border-dashed border-slate-600 rounded-lg p-8 text-center cursor-pointer hover:border-slate-500 transition-colors bg-transparent ${
                   isUploading ? "opacity-50 pointer-events-none" : ""
                 }`}
               >
                 {isUploading ? (
                   <>
-                    <Loader2 className="h-10 w-10 mx-auto mb-2 animate-spin text-violet-500" />
-                    <p className="text-sm text-zinc-400">Uploading...</p>
+                    <Loader2 className="h-10 w-10 mx-auto mb-2 animate-spin text-blue-600" />
+                    <p className="text-sm text-slate-400">Uploading...</p>
                   </>
                 ) : (
                   <>
-                    <Upload className="h-10 w-10 mx-auto mb-2 text-zinc-500" />
-                    <p className="text-sm font-medium text-zinc-300">
+                    <Upload className="h-10 w-10 mx-auto mb-2 text-slate-500" />
+                    <p className="text-sm font-medium text-slate-300">
                       Click to upload image
                     </p>
-                    <p className="text-xs mt-1 text-zinc-500">
+                    <p className="text-xs mt-1 text-slate-500">
                       JPEG, PNG, GIF, or WebP (max 10MB)
                     </p>
                   </>
@@ -286,34 +286,34 @@ function PortableTextInputField({
               </button>
             ) : (
               <div className="space-y-4">
-                <div className="flex items-center gap-2 p-3 bg-white/[0.05] rounded-lg">
+                <div className="flex items-center gap-2 p-3 bg-slate-50 rounded-lg">
                   <ImageIcon className="h-5 w-5 text-green-500" />
-                  <span className="text-sm text-zinc-300">
+                  <span className="text-sm text-slate-300">
                     Image uploaded successfully
                   </span>
                 </div>
 
                 <div className="space-y-3">
                   <div>
-                    <Label className="text-zinc-400 text-sm">
+                    <Label className="text-slate-400 text-sm">
                       Caption (optional)
                     </Label>
                     <Input
                       value={imageCaption}
                       onChange={(e) => setImageCaption(e.target.value)}
                       placeholder="Add a caption..."
-                      className="mt-1 bg-white/[0.05] border-white/[0.08] text-zinc-300"
+                      className="mt-1 bg-slate-50 border-slate-200 text-slate-300"
                     />
                   </div>
                   <div>
-                    <Label className="text-zinc-400 text-sm">
+                    <Label className="text-slate-400 text-sm">
                       Alt text (for accessibility)
                     </Label>
                     <Input
                       value={imageAlt}
                       onChange={(e) => setImageAlt(e.target.value)}
                       placeholder="Describe the image..."
-                      className="mt-1 bg-white/[0.05] border-white/[0.08] text-zinc-300"
+                      className="mt-1 bg-slate-50 border-slate-200 text-slate-300"
                     />
                   </div>
                 </div>
@@ -326,14 +326,14 @@ function PortableTextInputField({
                       setPendingImageAssetId(null);
                       fileInputRef.current?.click();
                     }}
-                    className="flex-1 border-white/[0.08] text-zinc-300 hover:bg-white/[0.05]"
+                    className="flex-1 border-slate-200 text-slate-300 hover:bg-slate-50"
                   >
                     Choose Different
                   </Button>
                   <Button
                     type="button"
                     onClick={handleInsertImage}
-                    className="flex-1 bg-violet-600 hover:bg-violet-700 text-white"
+                    className="flex-1 bg-blue-700 hover:bg-blue-800 text-white"
                   >
                     Insert Image
                   </Button>

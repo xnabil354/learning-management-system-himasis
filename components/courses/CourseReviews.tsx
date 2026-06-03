@@ -53,7 +53,7 @@ function StarRating({
             className={`${sizeClass} transition-colors ${
               star <= (hover || rating)
                 ? "fill-amber-400 text-amber-400"
-                : "fill-none text-zinc-600"
+                : "fill-none text-slate-600"
             }`}
           />
         </button>
@@ -96,8 +96,8 @@ function ReviewCard({
     <div
       className={`group relative p-5 rounded-2xl border transition-all duration-300 ${
         isOwn
-          ? "border-violet-500/20 bg-violet-500/[0.03]"
-          : "border-white/[0.06] bg-white/[0.02] hover:border-white/10"
+          ? "border-blue-600/20 bg-blue-600/[0.03]"
+          : "border-slate-200 bg-white hover:border-slate-200"
       }`}
     >
       <div className="flex items-start gap-4">
@@ -108,7 +108,7 @@ function ReviewCard({
             className="w-10 h-10 rounded-full object-cover ring-2 ring-white/10 shrink-0"
           />
         ) : (
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-sm font-bold text-white shrink-0">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-sky-500 flex items-center justify-center text-sm font-bold text-white shrink-0">
             {(review.userName ?? "A").charAt(0).toUpperCase()}
           </div>
         )}
@@ -120,12 +120,12 @@ function ReviewCard({
                 {review.userName ?? "Anonymous"}
               </span>
               {isOwn && (
-                <span className="text-[10px] font-medium text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded-full">
+                <span className="text-[10px] font-medium text-blue-600 bg-blue-600/10 px-2 py-0.5 rounded-full">
                   You
                 </span>
               )}
             </div>
-            <span className="text-xs text-zinc-600 shrink-0">
+            <span className="text-xs text-slate-600 shrink-0">
               {timeAgo(review._createdAt)}
             </span>
           </div>
@@ -134,7 +134,7 @@ function ReviewCard({
             <StarRating rating={review.rating ?? 0} size="sm" />
           </div>
 
-          <p className="mt-2.5 text-sm text-zinc-300 leading-relaxed whitespace-pre-wrap">
+          <p className="mt-2.5 text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">
             {review.comment}
           </p>
         </div>
@@ -211,22 +211,22 @@ function ReviewForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-6 rounded-2xl border border-white/[0.08] bg-white/[0.02] space-y-5"
+      className="p-6 rounded-2xl border border-slate-200 bg-white space-y-5"
     >
       <h3 className="text-lg font-bold text-white flex items-center gap-2">
-        <MessageSquare className="w-5 h-5 text-violet-400" />
+        <MessageSquare className="w-5 h-5 text-blue-600" />
         {isEditing ? "Update Your Review" : "Write a Review"}
       </h3>
 
       <div className="space-y-2">
-        <label className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+        <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">
           Rating
         </label>
         <StarRating rating={rating} interactive size="lg" onRate={setRating} />
       </div>
 
       <div className="space-y-2">
-        <label className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+        <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">
           Comment
         </label>
         <textarea
@@ -235,11 +235,11 @@ function ReviewForm({
           maxLength={1000}
           rows={4}
           placeholder="Share your experience with this course..."
-          className="w-full bg-black/40 border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-violet-500/40 focus:border-violet-500/30 resize-none transition-all"
+          className="w-full bg-white/80 border border-slate-200 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-600/40 focus:border-blue-600/30 resize-none transition-all"
         />
 
         <div className="flex items-center justify-between">
-          <p className="text-[11px] text-zinc-600">{comment.length}/1000</p>
+          <p className="text-[11px] text-slate-600">{comment.length}/1000</p>
           {error && <p className="text-xs text-red-400">{error}</p>}
         </div>
       </div>
@@ -247,7 +247,7 @@ function ReviewForm({
       <button
         type="submit"
         disabled={isPending || rating === 0}
-        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-violet-600 text-white text-sm font-semibold hover:bg-violet-500 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-700 text-white text-sm font-semibold hover:bg-blue-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
       >
         {isPending ? (
           <Loader2 className="w-4 h-4 animate-spin" />
@@ -292,19 +292,19 @@ export function CourseReviews({
         <h2 className="text-2xl font-bold text-white tracking-tight">
           Reviews
         </h2>
-        <span className="text-xs font-medium text-zinc-500 uppercase tracking-widest">
+        <span className="text-xs font-medium text-slate-500 uppercase tracking-widest">
           {reviews.length} {reviews.length === 1 ? "Review" : "Reviews"}
         </span>
       </div>
 
       {reviews.length > 0 && (
-        <div className="flex items-center gap-8 p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
+        <div className="flex items-center gap-8 p-6 rounded-2xl border border-slate-200 bg-white">
           <div className="text-center">
             <div className="text-5xl font-black text-white tracking-tight">
               {avgRating.toFixed(1)}
             </div>
             <StarRating rating={Math.round(avgRating)} size="sm" />
-            <p className="text-xs text-zinc-500 mt-1">
+            <p className="text-xs text-slate-500 mt-1">
               {reviews.length} {reviews.length === 1 ? "review" : "reviews"}
             </p>
           </div>
@@ -312,17 +312,17 @@ export function CourseReviews({
           <div className="flex-1 space-y-1.5">
             {ratingDistribution.map(({ star, count, percent }) => (
               <div key={star} className="flex items-center gap-3">
-                <span className="text-xs text-zinc-500 w-3 text-right">
+                <span className="text-xs text-slate-500 w-3 text-right">
                   {star}
                 </span>
                 <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-                <div className="flex-1 h-2 bg-white/5 rounded-full overflow-hidden">
+                <div className="flex-1 h-2 bg-slate-50 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-amber-400 rounded-full transition-all duration-500"
                     style={{ width: `${percent}%` }}
                   />
                 </div>
-                <span className="text-xs text-zinc-600 w-6 text-right">
+                <span className="text-xs text-slate-600 w-6 text-right">
                   {count}
                 </span>
               </div>
@@ -348,9 +348,9 @@ export function CourseReviews({
       )}
 
       {!userId && (
-        <div className="p-6 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] text-center">
-          <MessageSquare className="w-8 h-8 text-zinc-600 mx-auto mb-2" />
-          <p className="text-sm text-zinc-500">Sign in to leave a review</p>
+        <div className="p-6 rounded-2xl border border-dashed border-slate-200 bg-white text-center">
+          <MessageSquare className="w-8 h-8 text-slate-600 mx-auto mb-2" />
+          <p className="text-sm text-slate-500">Sign in to leave a review</p>
         </div>
       )}
 
@@ -372,7 +372,7 @@ export function CourseReviews({
 
       {reviews.length === 0 && userId && (
         <div className="text-center py-8">
-          <p className="text-sm text-zinc-600">
+          <p className="text-sm text-slate-600">
             No reviews yet. Be the first to review this course!
           </p>
         </div>

@@ -41,13 +41,13 @@ export const renderStyle: RenderStyleFunction = (props) => {
   }
   if (style === "blockquote") {
     return (
-      <blockquote className="border-l-4 border-violet-500 pl-4 my-4 italic text-zinc-400">
+      <blockquote className="border-l-4 border-blue-600 pl-4 my-4 italic text-slate-400">
         {props.children}
       </blockquote>
     );
   }
 
-  return <p className="text-zinc-300 leading-relaxed my-2">{props.children}</p>;
+  return <p className="text-slate-300 leading-relaxed my-2">{props.children}</p>;
 };
 
 export const renderDecorator: RenderDecoratorFunction = (props) => {
@@ -69,7 +69,7 @@ export const renderDecorator: RenderDecoratorFunction = (props) => {
   }
   if (decorator === "code") {
     return (
-      <code className="bg-white/[0.05] px-1.5 py-0.5 rounded text-sm text-violet-300 font-mono">
+      <code className="bg-slate-50 px-1.5 py-0.5 rounded text-sm text-blue-300 font-mono">
         {props.children}
       </code>
     );
@@ -86,7 +86,7 @@ export const renderAnnotation: RenderAnnotationFunction = (props) => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors cursor-pointer"
+        className="text-blue-600 hover:text-blue-300 underline underline-offset-2 transition-colors cursor-pointer"
       >
         {props.children}
       </a>
@@ -106,7 +106,7 @@ export const renderBlock: RenderBlockFunction = (props) => {
 
     if (!value?.asset?._ref) {
       return (
-        <div className="my-4 p-4 border border-dashed border-zinc-600 rounded-lg text-center text-zinc-500">
+        <div className="my-4 p-4 border border-dashed border-slate-600 rounded-lg text-center text-slate-500">
           Image not found
         </div>
       );
@@ -120,7 +120,7 @@ export const renderBlock: RenderBlockFunction = (props) => {
 
     return (
       <figure className="my-6" contentEditable={false}>
-        <div className="relative rounded-lg overflow-hidden bg-white/[0.02]">
+        <div className="relative rounded-lg overflow-hidden bg-white">
           <Image
             src={imageUrl}
             alt={value.alt || "Image"}
@@ -130,7 +130,7 @@ export const renderBlock: RenderBlockFunction = (props) => {
           />
         </div>
         {value.caption && (
-          <figcaption className="text-sm text-zinc-400 mt-2 text-center italic">
+          <figcaption className="text-sm text-slate-400 mt-2 text-center italic">
             {value.caption}
           </figcaption>
         )}
@@ -146,14 +146,14 @@ export const renderListItem: RenderListItemFunction = (props) => {
 
   if (listType === "bullet") {
     return (
-      <li className="ml-6 list-disc text-zinc-300 my-1">{props.children}</li>
+      <li className="ml-6 list-disc text-slate-300 my-1">{props.children}</li>
     );
   }
   if (listType === "number") {
     return (
-      <li className="ml-6 list-decimal text-zinc-300 my-1">{props.children}</li>
+      <li className="ml-6 list-decimal text-slate-300 my-1">{props.children}</li>
     );
   }
 
-  return <li className="ml-6 text-zinc-300 my-1">{props.children}</li>;
+  return <li className="ml-6 text-slate-300 my-1">{props.children}</li>;
 };

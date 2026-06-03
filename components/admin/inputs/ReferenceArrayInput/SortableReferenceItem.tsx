@@ -53,13 +53,13 @@ export function SortableReferenceItem({
     <div
       ref={setNodeRef}
       style={style}
-      className={`flex items-center gap-2 p-3 bg-white/[0.04] border border-white/[0.08] rounded-lg ${
+      className={`flex items-center gap-2 p-3 bg-slate-50 border border-slate-200 rounded-lg ${
         isDragging ? "opacity-50 shadow-lg" : ""
       }`}
     >
       <button
         type="button"
-        className="cursor-grab active:cursor-grabbing touch-none text-zinc-500 hover:text-zinc-300"
+        className="cursor-grab active:cursor-grabbing touch-none text-slate-500 hover:text-slate-300"
         {...attributes}
         {...listeners}
       >
@@ -67,7 +67,7 @@ export function SortableReferenceItem({
       </button>
       <Link
         href={editUrl}
-        className="text-sm text-zinc-300 flex-1 hover:text-violet-400 hover:underline transition-colors flex items-center gap-2"
+        className="text-sm text-slate-300 flex-1 hover:text-blue-600 hover:underline transition-colors flex items-center gap-2"
       >
         {title}
         <ExternalLink className="h-3 w-3 opacity-50" />
@@ -75,7 +75,7 @@ export function SortableReferenceItem({
       <Button
         variant="ghost"
         size="icon"
-        className="h-6 w-6 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-700"
+        className="h-6 w-6 text-slate-500 hover:text-slate-300 hover:bg-slate-700"
         onClick={onRemove}
       >
         <X className="h-4 w-4" />

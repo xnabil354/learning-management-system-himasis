@@ -44,7 +44,7 @@ export function LessonCompleteButton({
         <Button
           onClick={handleToggle}
           disabled={isPending}
-          className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0"
+          className="bg-gradient-to-r from-blue-700 to-sky-600 hover:from-blue-600 hover:to-sky-500 text-white border-0"
         >
           {isPending ? (
             <Loader2 className="w-4 h-4 mr-2 animate-spin" />

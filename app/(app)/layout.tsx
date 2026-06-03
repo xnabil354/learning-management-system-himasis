@@ -1,114 +1,112 @@
 import { SanityLive } from "@/sanity/lib/live";
 import { ClerkProvider } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
-import { TutorWidget } from "@/components/tutor";
+import { TutorWidget } from "@/components/tutor/TutorWidget";
 
 function AppLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: dark,
-        variables: {
-          colorPrimary: "#8b5cf6",
-          colorBackground: "#0a0a0a",
-          colorInputBackground: "#141414",
-          colorInputText: "#e4e4e7",
-          colorText: "#fafafa",
-          colorTextSecondary: "#a1a1aa",
-          colorDanger: "#ef4444",
-          colorSuccess: "#22c55e",
-          borderRadius: "0.75rem",
-          fontFamily: "inherit",
-        },
-        elements: {
-          card: {
-            backgroundColor: "#0a0a0a",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.8)",
-          },
-          userButtonPopoverCard: {
-            backgroundColor: "#0a0a0a",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-          },
-          userButtonPopoverActionButton: {
-            color: "#a1a1aa",
-            "&:hover": {
-              backgroundColor: "rgba(255, 255, 255, 0.05)",
-              color: "#fafafa",
-            },
-          },
-          userPreviewMainIdentifier: {
-            color: "#fafafa",
-          },
-          userPreviewSecondaryIdentifier: {
-            color: "#71717a",
-          },
-          navbarButton: {
-            color: "#a1a1aa",
-            "&:hover": {
-              backgroundColor: "rgba(255, 255, 255, 0.05)",
-              color: "#fafafa",
-            },
-          },
-          navbarButtonActive: {
-            backgroundColor: "rgba(139, 92, 246, 0.1)",
-            color: "#8b5cf6",
-          },
-          headerTitle: {
-            color: "#fafafa",
-          },
-          headerSubtitle: {
-            color: "#71717a",
-          },
-          formButtonPrimary: {
-            backgroundColor: "#8b5cf6",
-            "&:hover": {
-              backgroundColor: "#7c3aed",
-            },
-          },
-          formFieldLabel: {
-            color: "#a1a1aa",
-          },
-          formFieldInput: {
-            backgroundColor: "#141414",
-            borderColor: "rgba(255, 255, 255, 0.1)",
-            color: "#fafafa",
-            "&:focus": {
-              borderColor: "#8b5cf6",
-              boxShadow: "0 0 0 3px rgba(139, 92, 246, 0.15)",
-            },
-          },
-          profileSectionTitle: {
-            color: "#fafafa",
-            borderBottomColor: "rgba(255, 255, 255, 0.05)",
-          },
-          profileSectionContent: {
-            color: "#a1a1aa",
-          },
-          badge: {
-            backgroundColor: "rgba(139, 92, 246, 0.1)",
-            color: "#8b5cf6",
-            border: "1px solid rgba(139, 92, 246, 0.2)",
-          },
-          footerActionLink: {
-            color: "#8b5cf6",
-            "&:hover": {
-              color: "#a78bfa",
-            },
-          },
-          footer: {
-            "& + div": {
-              background: "transparent",
-            },
-          },
-        },
-      }}
-    >
-      <div>{children}</div>
-      <SanityLive />
-      <TutorWidget />
-    </ClerkProvider>
-  );
+    return (
+        <ClerkProvider
+            appearance={{
+                variables: {
+                    colorPrimary: "#1d4ed8",
+                    colorBackground: "#ffffff",
+                    colorInputBackground: "#f8fafc",
+                    colorInputText: "#0f172a",
+                    colorText: "#0f172a",
+                    colorTextSecondary: "#64748b",
+                    colorDanger: "#dc2626",
+                    colorSuccess: "#16a34a",
+                    borderRadius: "0.75rem",
+                    fontFamily: "inherit",
+                },
+                elements: {
+                    card: {
+                        backgroundColor: "#ffffff",
+                        border: "1px solid #e2e8f0",
+                        boxShadow: "0 4px 24px -4px rgba(15, 23, 42, 0.08)",
+                    },
+                    userButtonPopoverCard: {
+                        backgroundColor: "#ffffff",
+                        border: "1px solid #e2e8f0",
+                    },
+                    userButtonPopoverActionButton: {
+                        color: "#64748b",
+                        "&:hover": {
+                            backgroundColor: "#f1f5f9",
+                            color: "#0f172a",
+                        },
+                    },
+                    userPreviewMainIdentifier: {
+                        color: "#0f172a",
+                    },
+                    userPreviewSecondaryIdentifier: {
+                        color: "#94a3b8",
+                    },
+                    navbarButton: {
+                        color: "#64748b",
+                        "&:hover": {
+                            backgroundColor: "#f1f5f9",
+                            color: "#0f172a",
+                        },
+                    },
+                    navbarButtonActive: {
+                        backgroundColor: "#eff6ff",
+                        color: "#1d4ed8",
+                    },
+                    headerTitle: {
+                        color: "#0f172a",
+                    },
+                    headerSubtitle: {
+                        color: "#94a3b8",
+                    },
+                    formButtonPrimary: {
+                        backgroundColor: "#1d4ed8",
+                        "&:hover": {
+                            backgroundColor: "#1e40af",
+                        },
+                    },
+                    formFieldLabel: {
+                        color: "#64748b",
+                    },
+                    formFieldInput: {
+                        backgroundColor: "#f8fafc",
+                        borderColor: "#e2e8f0",
+                        color: "#0f172a",
+                        "&:focus": {
+                            borderColor: "#1d4ed8",
+                            boxShadow: "0 0 0 3px rgba(29, 78, 216, 0.15)",
+                        },
+                    },
+                    profileSectionTitle: {
+                        color: "#0f172a",
+                        borderBottomColor: "#e2e8f0",
+                    },
+                    profileSectionContent: {
+                        color: "#64748b",
+                    },
+                    badge: {
+                        backgroundColor: "#eff6ff",
+                        color: "#1d4ed8",
+                        border: "1px solid #bfdbfe",
+                    },
+                    footerActionLink: {
+                        color: "#1d4ed8",
+                        "&:hover": {
+                            color: "#2563eb",
+                        },
+                    },
+                    footer: {
+                        "& + div": {
+                            background: "transparent",
+                        },
+                    },
+                },
+            }}
+        >
+            <div>{children}</div>
+            <SanityLive />
+            <TutorWidget />
+        </ClerkProvider>
+    );
 }
 
 export default AppLayout;

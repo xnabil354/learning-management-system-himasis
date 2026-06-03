@@ -21,9 +21,9 @@ interface LessonEditorProps {
 function LessonEditorFallback() {
   return (
     <div className="max-w-[1200px] mx-auto space-y-6">
-      <Skeleton className="h-12 w-2/3 bg-white/[0.04] rounded-xl" />
-      <Skeleton className="h-20 w-full bg-white/[0.04] rounded-xl" />
-      <Skeleton className="h-16 w-full bg-white/[0.04] rounded-xl" />
+      <Skeleton className="h-12 w-2/3 bg-slate-50 rounded-xl" />
+      <Skeleton className="h-20 w-full bg-slate-50 rounded-xl" />
+      <Skeleton className="h-16 w-full bg-slate-50 rounded-xl" />
     </div>
   );
 }
@@ -72,31 +72,31 @@ function LessonEditorContent({
     <div className="max-w-[1200px] mx-auto space-y-4">
       <div className="flex items-center justify-end gap-3">
         <DocumentActions {...handle} />
-        <div className="h-5 w-px bg-white/[0.06]" />
+        <div className="h-5 w-px bg-slate-100" />
         <OpenInStudio handle={handle} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         <div className="lg:col-span-3 space-y-6">
-          <div className="bg-white/[0.02] rounded-xl border border-white/[0.06] p-6">
+          <div className="bg-white rounded-xl border border-slate-200 p-6">
             <Input
               value={title ?? ""}
               onChange={(e) => editTitle(e.currentTarget.value)}
               placeholder="Untitled Lesson"
-              className="text-2xl font-semibold text-white border-none shadow-none h-auto py-1 focus-visible:ring-0 bg-transparent placeholder:text-zinc-600"
+              className="text-2xl font-semibold text-white border-none shadow-none h-auto py-1 focus-visible:ring-0 bg-transparent placeholder:text-slate-600"
             />
 
             <Textarea
               value={description ?? ""}
               onChange={(e) => editDescription(e.currentTarget.value)}
               placeholder="Add a description..."
-              className="text-zinc-400 border-none shadow-none resize-none focus-visible:ring-0 bg-transparent placeholder:text-zinc-600 mt-3"
+              className="text-slate-400 border-none shadow-none resize-none focus-visible:ring-0 bg-transparent placeholder:text-slate-600 mt-3"
               rows={3}
             />
           </div>
 
-          <div className="bg-white/[0.02] rounded-xl border border-white/[0.06] p-6">
-            <h3 className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-4">
               Settings
             </h3>
             <SlugInput
@@ -107,8 +107,8 @@ function LessonEditorContent({
             />
           </div>
 
-          <div className="bg-white/[0.02] rounded-xl border border-white/[0.06] p-6">
-            <h3 className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-4">
               Lesson Content
             </h3>
             <PortableTextInput {...handle} path="content" label="Content" />
@@ -116,26 +116,26 @@ function LessonEditorContent({
         </div>
 
         <div className="lg:col-span-2">
-          <div className="bg-white/[0.02] rounded-xl border border-white/[0.06] p-6 lg:sticky lg:top-20 space-y-6">
+          <div className="bg-white rounded-xl border border-slate-200 p-6 lg:sticky lg:top-20 space-y-6">
             <div className="flex items-center gap-2">
-              <Video className="w-4 h-4 text-violet-400" />
-              <h3 className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+              <Video className="w-4 h-4 text-blue-600" />
+              <h3 className="text-xs font-medium text-slate-500 uppercase tracking-wider">
                 YouTube Video
               </h3>
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs text-zinc-500">YouTube URL</label>
+              <label className="text-xs text-slate-500">YouTube URL</label>
               <Input
                 value={videoUrl ?? ""}
                 onChange={(e) => editVideoUrl(e.currentTarget.value)}
                 placeholder="https://www.youtube.com/watch?v=..."
-                className="bg-white/[0.03] border-white/[0.08] text-white placeholder:text-zinc-600 focus:border-violet-500/40"
+                className="bg-white border-slate-200 text-white placeholder:text-slate-600 focus:border-blue-600/40"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs text-zinc-500">
+              <label className="text-xs text-slate-500">
                 Duration (minutes)
               </label>
               <Input
@@ -150,13 +150,13 @@ function LessonEditorContent({
                 }
                 placeholder="e.g. 15"
                 min={0}
-                className="bg-white/[0.03] border-white/[0.08] text-white placeholder:text-zinc-600 focus:border-violet-500/40"
+                className="bg-white border-slate-200 text-white placeholder:text-slate-600 focus:border-blue-600/40"
               />
             </div>
 
             {videoUrl && (
               <div className="mt-4">
-                <p className="text-xs text-zinc-500 mb-2">Preview</p>
+                <p className="text-xs text-slate-500 mb-2">Preview</p>
                 <iframe
                   src={`https://www.youtube.com/embed/${extractYouTubeId(videoUrl)}`}
                   title="Video Preview"

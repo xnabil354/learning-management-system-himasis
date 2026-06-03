@@ -104,11 +104,11 @@ export function LessonPageContent({
 
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold mb-2">
+            <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
               {lesson.title ?? "Untitled Lesson"}
             </h1>
             {lesson.description && (
-              <p className="text-zinc-400">{lesson.description}</p>
+              <p className="text-slate-500">{lesson.description}</p>
             )}
           </div>
 
@@ -122,10 +122,10 @@ export function LessonPageContent({
         </div>
 
         {lesson.content && (
-          <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 md:p-8 mb-6">
+          <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-6 md:p-8 mb-6">
             <div className="flex items-center gap-2 mb-6">
-              <BookOpen className="w-5 h-5 text-violet-400" />
-              <h2 className="text-lg font-semibold">Lesson Notes</h2>
+              <BookOpen className="w-5 h-5 text-blue-600" />
+              <h2 className="text-lg font-semibold text-slate-900">Lesson Notes</h2>
             </div>
             <LessonContent content={lesson.content} />
           </div>
@@ -143,12 +143,12 @@ export function LessonPageContent({
           </div>
         )}
 
-        <div className="flex items-center justify-between pt-6 border-t border-zinc-800">
+        <div className="flex items-center justify-between pt-6 border-t border-slate-200">
           {prevLesson ? (
             <Link href={`/lessons/${prevLesson.slug}`}>
               <Button
                 variant="ghost"
-                className="text-zinc-400 hover:text-white hover:bg-zinc-800"
+                className="text-slate-500 hover:text-slate-900 hover:bg-slate-100"
               >
                 <ChevronLeft className="w-4 h-4 mr-2" />
                 <span className="hidden sm:inline">{prevLesson.title}</span>
@@ -161,7 +161,7 @@ export function LessonPageContent({
 
           {nextLesson ? (
             <Link href={`/lessons/${nextLesson.slug}`}>
-              <Button className="bg-violet-600 hover:bg-violet-500 text-white">
+              <Button className="bg-blue-700 hover:bg-blue-600 text-white">
                 <span className="hidden sm:inline">{nextLesson.title}</span>
                 <span className="sm:hidden">Next</span>
                 <ChevronRight className="w-4 h-4 ml-2" />

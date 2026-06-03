@@ -26,7 +26,7 @@ interface CertificateRecord {
 function generateCertificateId(): string {
   const year = new Date().getFullYear();
   const uid = nanoid(6).toUpperCase();
-  return `SISCA-${year}-${uid}`;
+  return `SMARTSIS-${year}-${uid}`;
 }
 
 export async function issueCertificate(

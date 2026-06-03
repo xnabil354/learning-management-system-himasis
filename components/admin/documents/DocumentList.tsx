@@ -29,7 +29,7 @@ function DocumentListFallback() {
   return (
     <div className="space-y-2">
       {[1, 2, 3].map((i) => (
-        <Skeleton key={i} className="h-16 w-full bg-white/[0.04] rounded-xl" />
+        <Skeleton key={i} className="h-16 w-full bg-slate-50 rounded-xl" />
       ))}
     </div>
   );
@@ -55,19 +55,19 @@ function DocumentItem({
 
   return (
     <Link href={`${basePath}/${documentId}`}>
-      <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-200 cursor-pointer group">
+      <div className="p-4 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-200 transition-all duration-200 cursor-pointer group">
         <div className="flex items-center justify-between">
           <div className="space-y-0.5 flex-1 min-w-0">
-            <h3 className="font-medium text-sm text-zinc-200 truncate group-hover:text-white transition-colors">
+            <h3 className="font-medium text-sm text-slate-200 truncate group-hover:text-slate-900 transition-colors">
               {title}
             </h3>
             {description && (
-              <p className="text-xs text-zinc-600 line-clamp-1">
+              <p className="text-xs text-slate-600 line-clamp-1">
                 {description}
               </p>
             )}
           </div>
-          <ChevronRight className="h-4 w-4 text-zinc-700 group-hover:text-zinc-400 group-hover:translate-x-0.5 transition-all shrink-0 ml-4" />
+          <ChevronRight className="h-4 w-4 text-slate-700 group-hover:text-slate-400 group-hover:translate-x-0.5 transition-all shrink-0 ml-4" />
         </div>
       </div>
     </Link>
@@ -96,13 +96,13 @@ function DocumentListContent({
 
   if (!documents || documents.length === 0) {
     return (
-      <div className="p-16 rounded-xl bg-white/[0.02] border border-white/[0.06] border-dashed text-center">
-        <p className="text-sm text-zinc-500 mb-4">No {documentType}s found</p>
+      <div className="p-16 rounded-xl bg-white border border-slate-200 border-dashed text-center">
+        <p className="text-sm text-slate-500 mb-4">No {documentType}s found</p>
         <button
           type="button"
           onClick={onCreateDocument}
           disabled={isCreating}
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-500 disabled:opacity-50 rounded-lg transition-all duration-200"
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-700 hover:bg-blue-600 disabled:opacity-50 rounded-lg transition-all duration-200"
         >
           {isCreating ? (
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -121,7 +121,7 @@ function DocumentListContent({
         <Suspense
           key={doc.documentId}
           fallback={
-            <Skeleton className="h-16 w-full bg-white/[0.04] rounded-xl" />
+            <Skeleton className="h-16 w-full bg-slate-50 rounded-xl" />
           }
         >
           <DocumentItem {...doc} basePath={basePath} />
@@ -165,7 +165,7 @@ export function DocumentList({
             {title}
           </h1>
           {description && (
-            <p className="text-sm text-zinc-500 mt-1">{description}</p>
+            <p className="text-sm text-slate-500 mt-1">{description}</p>
           )}
         </div>
         {showCreateButton && (
@@ -173,7 +173,7 @@ export function DocumentList({
             type="button"
             onClick={handleCreateDocument}
             disabled={isCreating}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-500 disabled:opacity-50 rounded-lg transition-all duration-200"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-700 hover:bg-blue-600 disabled:opacity-50 rounded-lg transition-all duration-200"
           >
             {isCreating ? (
               <Loader2 className="h-4 w-4 animate-spin" />
@@ -186,20 +186,20 @@ export function DocumentList({
       </div>
 
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-600" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-600" />
         <Input
           type="text"
           placeholder={`Search ${documentType}s...`}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10 pr-10 bg-white/[0.02] border-white/[0.06] text-white placeholder:text-zinc-600 focus:border-violet-500/40 focus:ring-1 focus:ring-violet-500/20 h-10 rounded-lg"
+          className="pl-10 pr-10 bg-white border-slate-200 text-white placeholder:text-slate-600 focus:border-blue-600/40 focus:ring-1 focus:ring-blue-600/20 h-10 rounded-lg"
         />
 
         {searchQuery && (
           <button
             type="button"
             onClick={() => setSearchQuery("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-600 hover:text-zinc-300 transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-300 transition-colors"
           >
             <X className="h-4 w-4" />
           </button>

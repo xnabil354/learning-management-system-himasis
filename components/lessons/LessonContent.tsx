@@ -6,40 +6,40 @@ import Image from "next/image";
 const components: PortableTextComponents = {
   block: {
     h1: ({ children }) => (
-      <h1 className="text-3xl font-bold mt-8 mb-4 text-white">{children}</h1>
+      <h1 className="text-3xl font-bold mt-8 mb-4 text-slate-900">{children}</h1>
     ),
 
     h2: ({ children }) => (
-      <h2 className="text-2xl font-bold mt-6 mb-3 text-white">{children}</h2>
+      <h2 className="text-2xl font-bold mt-6 mb-3 text-slate-900">{children}</h2>
     ),
 
     h3: ({ children }) => (
-      <h3 className="text-xl font-semibold mt-5 mb-2 text-white">{children}</h3>
+      <h3 className="text-xl font-semibold mt-5 mb-2 text-slate-900">{children}</h3>
     ),
 
     h4: ({ children }) => (
-      <h4 className="text-lg font-semibold mt-4 mb-2 text-white">{children}</h4>
+      <h4 className="text-lg font-semibold mt-4 mb-2 text-slate-900">{children}</h4>
     ),
 
     normal: ({ children }) => (
-      <p className="text-zinc-300 leading-relaxed mb-4">{children}</p>
+      <p className="text-slate-600 leading-relaxed mb-4">{children}</p>
     ),
 
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-violet-500 pl-4 my-4 italic text-zinc-400">
+      <blockquote className="border-l-4 border-blue-600 pl-4 my-4 italic text-slate-500">
         {children}
       </blockquote>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc list-inside space-y-2 mb-4 text-zinc-300">
+      <ul className="list-disc list-inside space-y-2 mb-4 text-slate-600">
         {children}
       </ul>
     ),
 
     number: ({ children }) => (
-      <ol className="list-decimal list-inside space-y-2 mb-4 text-zinc-300">
+      <ol className="list-decimal list-inside space-y-2 mb-4 text-slate-600">
         {children}
       </ol>
     ),
@@ -50,12 +50,12 @@ const components: PortableTextComponents = {
   },
   marks: {
     strong: ({ children }) => (
-      <strong className="font-semibold text-white">{children}</strong>
+      <strong className="font-semibold text-slate-900">{children}</strong>
     ),
 
     em: ({ children }) => <em className="italic">{children}</em>,
     code: ({ children }) => (
-      <code className="bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-violet-300 font-mono">
+      <code className="bg-slate-100 px-1.5 py-0.5 rounded text-sm text-blue-700 font-mono">
         {children}
       </code>
     ),
@@ -65,7 +65,7 @@ const components: PortableTextComponents = {
         href={value?.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors"
+        className="text-blue-600 hover:text-blue-700 underline underline-offset-2 transition-colors"
       >
         {children}
       </a>
@@ -81,7 +81,7 @@ const components: PortableTextComponents = {
 
       return (
         <figure className="my-6">
-          <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-zinc-900">
+          <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-100">
             <Image
               src={imageUrl}
               alt={value.alt || "Lesson image"}
@@ -90,7 +90,7 @@ const components: PortableTextComponents = {
             />
           </div>
           {value.caption && (
-            <figcaption className="text-sm text-zinc-400 mt-2 text-center italic">
+            <figcaption className="text-sm text-slate-500 mt-2 text-center italic">
               {value.caption}
             </figcaption>
           )}
@@ -110,7 +110,7 @@ export function LessonContent({ content }: LessonContentProps) {
   }
 
   return (
-    <div className="prose prose-invert max-w-none">
+    <div className="prose prose-slate max-w-none">
       <PortableText value={content} components={components} />
     </div>
   );

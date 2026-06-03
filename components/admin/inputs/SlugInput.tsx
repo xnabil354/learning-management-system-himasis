@@ -35,8 +35,8 @@ function slugify(text: string): string {
 function SlugInputFallback({ label }: { label: string }) {
   return (
     <div className="space-y-2">
-      <Label className="text-zinc-300">{label}</Label>
-      <Skeleton className="h-10 w-full bg-white/[0.05]" />
+      <Label className="text-slate-300">{label}</Label>
+      <Skeleton className="h-10 w-full bg-slate-50" />
     </div>
   );
 }
@@ -75,12 +75,12 @@ function SlugInputField({
 
   return (
     <div className="space-y-2">
-      <Label htmlFor={path} className="text-zinc-300">
+      <Label htmlFor={path} className="text-slate-300">
         {label}
       </Label>
       <div className="flex gap-2">
         <div className="relative flex-1">
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-sm">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">
             /
           </span>
           <Input
@@ -89,7 +89,7 @@ function SlugInputField({
             value={currentSlug}
             onChange={(e) => handleChange(e.currentTarget.value)}
             placeholder={placeholder}
-            className="pl-6 bg-white/[0.04] border-white/[0.08] text-white placeholder:text-zinc-500"
+            className="pl-6 bg-slate-50 border-slate-200 text-white placeholder:text-slate-500"
           />
         </div>
         <Button
@@ -98,12 +98,12 @@ function SlugInputField({
           size="icon"
           onClick={generateFromSource}
           title="Generate from title"
-          className="border-white/[0.08] text-zinc-400 hover:text-white hover:bg-white/[0.05]"
+          className="border-slate-200 text-slate-400 hover:text-slate-900 hover:bg-slate-50"
         >
           <RefreshCw className="h-4 w-4" />
         </Button>
       </div>
-      <p className="text-xs text-zinc-500">
+      <p className="text-xs text-slate-500">
         URL-friendly identifier for this content
       </p>
     </div>

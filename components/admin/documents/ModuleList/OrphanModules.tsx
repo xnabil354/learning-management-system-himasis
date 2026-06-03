@@ -41,7 +41,7 @@ export function OrphanModules({
         {orphanModules.map((doc) => (
           <Suspense
             key={doc.documentId}
-            fallback={<Skeleton className="h-16 w-full bg-white/[0.04]" />}
+            fallback={<Skeleton className="h-16 w-full bg-slate-50" />}
           >
             <ModuleItem {...doc} />
           </Suspense>

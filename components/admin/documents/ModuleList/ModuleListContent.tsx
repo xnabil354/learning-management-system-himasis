@@ -57,7 +57,7 @@ export function ModuleListContent({
         {modules.map((doc) => (
           <Suspense
             key={doc.documentId}
-            fallback={<Skeleton className="h-16 w-full bg-white/[0.05]" />}
+            fallback={<Skeleton className="h-16 w-full bg-slate-50" />}
           >
             <div className="pb-1">
               <ModuleItem {...doc} />
@@ -79,7 +79,7 @@ export function ModuleListContent({
           {courses.map((course) => (
             <Suspense
               key={course.documentId}
-              fallback={<Skeleton className="h-24 w-full bg-white/[0.05]" />}
+              fallback={<Skeleton className="h-24 w-full bg-slate-50" />}
             >
               <CourseWithModules {...course} />
             </Suspense>

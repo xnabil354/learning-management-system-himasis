@@ -58,7 +58,7 @@ export function LessonListContent({
           <Suspense
             key={doc.documentId}
             fallback={
-              <Skeleton className="h-12 w-full bg-white/[0.04] rounded-lg" />
+              <Skeleton className="h-12 w-full bg-slate-50 rounded-lg" />
             }
           >
             <div className="pb-1">
@@ -73,7 +73,7 @@ export function LessonListContent({
   return (
     <div className="space-y-4">
       {}
-      <div className="flex items-center gap-4 text-xs text-zinc-600 pb-2 border-b border-white/[0.06]">
+      <div className="flex items-center gap-4 text-xs text-slate-600 pb-2 border-b border-slate-200">
         <span className="flex items-center gap-1.5">
           <Badge
             variant="secondary"
@@ -95,7 +95,7 @@ export function LessonListContent({
         <span className="flex items-center gap-1.5">
           <Badge
             variant="secondary"
-            className="bg-violet-500/10 text-violet-400 border-violet-500/30 text-xs px-1.5 py-0"
+            className="bg-blue-600/10 text-blue-600 border-blue-600/30 text-xs px-1.5 py-0"
           >
             <Link2 className="h-3 w-3" />
           </Badge>
@@ -113,7 +113,7 @@ export function LessonListContent({
             <Suspense
               key={course.documentId}
               fallback={
-                <Skeleton className="h-24 w-full bg-white/[0.04] rounded-xl" />
+                <Skeleton className="h-24 w-full bg-slate-50 rounded-xl" />
               }
             >
               <CourseWithModulesAndLessons {...course} />

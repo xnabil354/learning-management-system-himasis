@@ -45,7 +45,7 @@ interface Props {
 }
 
 const COLORS = [
-  "#8b5cf6",
+  "#2563eb",
   "#06b6d4",
   "#f59e0b",
   "#10b981",
@@ -97,9 +97,9 @@ export default function AnalyticsCharts({ data, userId }: Props) {
         label: "Progress %",
         data: radarValues,
         backgroundColor: "rgba(139, 92, 246, 0.2)",
-        borderColor: "#8b5cf6",
+        borderColor: "#2563eb",
         borderWidth: 2,
-        pointBackgroundColor: "#8b5cf6",
+        pointBackgroundColor: "#2563eb",
         pointBorderColor: "#fff",
         pointRadius: 4,
       },
@@ -206,12 +206,12 @@ export default function AnalyticsCharts({ data, userId }: Props) {
         {
           label: "Menit",
           data: minutesPerWeek,
-          borderColor: "#8b5cf6",
+          borderColor: "#2563eb",
           backgroundColor: "rgba(139, 92, 246, 0.1)",
           tension: 0.4,
           fill: true,
           pointRadius: 5,
-          pointBackgroundColor: "#8b5cf6",
+          pointBackgroundColor: "#2563eb",
           pointBorderColor: "#0e1117",
           pointBorderWidth: 2,
         },
@@ -395,7 +395,7 @@ export default function AnalyticsCharts({ data, userId }: Props) {
       {
         label: "Jam Belajar",
         data: areaValues,
-        borderColor: "#a855f7",
+        borderColor: "#3b82f6",
         backgroundColor: (ctx: any) => {
           const chart = ctx.chart;
           const { ctx: canvasCtx, chartArea } = chart;
@@ -413,7 +413,7 @@ export default function AnalyticsCharts({ data, userId }: Props) {
         tension: 0.4,
         fill: true,
         pointRadius: 5,
-        pointBackgroundColor: "#a855f7",
+        pointBackgroundColor: "#3b82f6",
         pointBorderColor: "#0e1117",
         pointBorderWidth: 2,
       },
@@ -459,14 +459,14 @@ export default function AnalyticsCharts({ data, userId }: Props) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
+      <div className="rounded-2xl bg-white border border-slate-200 p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center">
+          <div className="w-9 h-9 rounded-xl bg-blue-600/10 flex items-center justify-center">
             <span className="text-lg">🎯</span>
           </div>
           <div>
             <h3 className="text-sm font-bold text-white">Course Progress</h3>
-            <p className="text-[11px] text-zinc-500">
+            <p className="text-[11px] text-slate-500">
               Radar perbandingan progress
             </p>
           </div>
@@ -476,14 +476,14 @@ export default function AnalyticsCharts({ data, userId }: Props) {
         </div>
       </div>
 
-      <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
+      <div className="rounded-2xl bg-white border border-slate-200 p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-9 h-9 rounded-xl bg-cyan-500/10 flex items-center justify-center">
             <span className="text-lg">📈</span>
           </div>
           <div>
             <h3 className="text-sm font-bold text-white">Learning Velocity</h3>
-            <p className="text-[11px] text-zinc-500">
+            <p className="text-[11px] text-slate-500">
               Kecepatan belajar mingguan
             </p>
           </div>
@@ -493,14 +493,14 @@ export default function AnalyticsCharts({ data, userId }: Props) {
         </div>
       </div>
 
-      <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
+      <div className="rounded-2xl bg-white border border-slate-200 p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-9 h-9 rounded-xl bg-emerald-500/10 flex items-center justify-center">
             <span className="text-lg">📊</span>
           </div>
           <div>
             <h3 className="text-sm font-bold text-white">Completion Rate</h3>
-            <p className="text-[11px] text-zinc-500">
+            <p className="text-[11px] text-slate-500">
               Lesson selesai vs. sisa per course
             </p>
           </div>
@@ -510,7 +510,7 @@ export default function AnalyticsCharts({ data, userId }: Props) {
         </div>
       </div>
 
-      <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
+      <div className="rounded-2xl bg-white border border-slate-200 p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-9 h-9 rounded-xl bg-amber-500/10 flex items-center justify-center">
             <span className="text-lg">🍩</span>
@@ -519,7 +519,7 @@ export default function AnalyticsCharts({ data, userId }: Props) {
             <h3 className="text-sm font-bold text-white">
               Category Distribution
             </h3>
-            <p className="text-[11px] text-zinc-500">
+            <p className="text-[11px] text-slate-500">
               Distribusi course per kategori
             </p>
           </div>
@@ -529,16 +529,16 @@ export default function AnalyticsCharts({ data, userId }: Props) {
         </div>
       </div>
 
-      <div className="lg:col-span-2 rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
+      <div className="lg:col-span-2 rounded-2xl bg-white border border-slate-200 p-6 backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-9 h-9 rounded-xl bg-fuchsia-500/10 flex items-center justify-center">
+          <div className="w-9 h-9 rounded-xl bg-sky-500/10 flex items-center justify-center">
             <span className="text-lg">⏱️</span>
           </div>
           <div>
             <h3 className="text-sm font-bold text-white">
               Learning Hours per Course
             </h3>
-            <p className="text-[11px] text-zinc-500">
+            <p className="text-[11px] text-slate-500">
               Total jam belajar yang sudah diselesaikan
             </p>
           </div>

@@ -53,7 +53,7 @@ export async function POST(req: Request) {
         await resend.emails.send({
           from: EMAIL_FROM,
           to: email,
-          subject: "Selamat Datang di SISCA — HIMASIS E-Learning! 🎓",
+          subject: "Selamat Datang di SMARTSIS — HIMASIS E-Learning! 🎓",
           react: WelcomeEmail({
             firstName: first_name || "Mahasiswa",
             dashboardUrl: `${APP_URL}/dashboard`,
