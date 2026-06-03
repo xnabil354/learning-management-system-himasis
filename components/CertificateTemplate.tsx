@@ -198,7 +198,7 @@ export const CertificateTemplate = ({
             <Text style={s.logoLetter}>S</Text>
           </View>
           <View>
-            <Text style={s.logoName}>SISCA</Text>
+            <Text style={s.logoName}>SMARTSIS</Text>
             <Text style={s.logoSub}>ACADEMY • HIMASIS</Text>
           </View>
         </View>

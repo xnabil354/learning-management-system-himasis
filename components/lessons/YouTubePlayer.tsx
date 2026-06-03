@@ -33,11 +33,11 @@ export function YouTubePlayer({
   if (!videoUrl) {
     return (
       <div
-        className={`aspect-video bg-zinc-900 rounded-xl flex items-center justify-center ${className}`}
+        className={`aspect-video bg-slate-900 rounded-xl flex items-center justify-center ${className}`}
       >
         <div className="text-center">
-          <VideoOff className="w-12 h-12 text-zinc-600 mx-auto mb-3" />
-          <p className="text-zinc-500">No video available</p>
+          <VideoOff className="w-12 h-12 text-slate-600 mx-auto mb-3" />
+          <p className="text-slate-500">No video available</p>
         </div>
       </div>
     );
@@ -48,11 +48,11 @@ export function YouTubePlayer({
   if (!videoId) {
     return (
       <div
-        className={`aspect-video bg-zinc-900 rounded-xl flex items-center justify-center ${className}`}
+        className={`aspect-video bg-slate-900 rounded-xl flex items-center justify-center ${className}`}
       >
         <div className="text-center">
-          <VideoOff className="w-12 h-12 text-zinc-600 mx-auto mb-3" />
-          <p className="text-zinc-500">Invalid YouTube URL</p>
+          <VideoOff className="w-12 h-12 text-slate-600 mx-auto mb-3" />
+          <p className="text-slate-500">Invalid YouTube URL</p>
         </div>
       </div>
     );

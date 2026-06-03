@@ -35,11 +35,11 @@ export default async function CoursePage({ params }: CoursePageProps) {
   });
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-violet-600/15 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-700/15 rounded-full blur-[120px] animate-pulse" />
         <div
-          className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-fuchsia-600/10 rounded-full blur-[100px] animate-pulse"
+          className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-sky-600/10 rounded-full blur-[100px] animate-pulse"
           style={{ animationDelay: "1s" }}
         />
 

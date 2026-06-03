@@ -35,8 +35,8 @@ import type { ReferenceArrayInputProps, SanityReference } from "./types";
 function ReferenceArrayInputFallback({ label }: { label: string }) {
   return (
     <div className="space-y-2">
-      <Label className="text-zinc-300">{label}</Label>
-      <Skeleton className="h-24 w-full bg-white/[0.05]" />
+      <Label className="text-slate-300">{label}</Label>
+      <Skeleton className="h-24 w-full bg-slate-50" />
     </div>
   );
 }
@@ -118,11 +118,11 @@ function ReferenceArrayInputField({
 
   return (
     <div className="space-y-3">
-      <Label className="text-zinc-300">{label}</Label>
+      <Label className="text-slate-300">{label}</Label>
 
       {}
       {refs.length > 0 ? (
-        <div className="p-2 rounded-lg border border-white/[0.08] bg-white/[0.03]">
+        <div className="p-2 rounded-lg border border-slate-200 bg-white">
           <DndContext
             sensors={sensors}
             collisionDetection={closestCenter}
@@ -139,10 +139,10 @@ function ReferenceArrayInputField({
                     <Suspense
                       key={id}
                       fallback={
-                        <div className="flex items-center gap-2 p-3 bg-white/[0.04] border border-white/[0.08] rounded-lg">
-                          <GripVertical className="h-4 w-4 text-zinc-500" />
-                          <Skeleton className="h-4 w-32 flex-1 bg-zinc-700" />
-                          <Skeleton className="h-6 w-6 bg-zinc-700" />
+                        <div className="flex items-center gap-2 p-3 bg-slate-50 border border-slate-200 rounded-lg">
+                          <GripVertical className="h-4 w-4 text-slate-500" />
+                          <Skeleton className="h-4 w-32 flex-1 bg-slate-700" />
+                          <Skeleton className="h-6 w-6 bg-slate-700" />
                         </div>
                       }
                     >
@@ -162,22 +162,22 @@ function ReferenceArrayInputField({
           </DndContext>
         </div>
       ) : (
-        <p className="text-sm text-zinc-500 py-2">No items added yet</p>
+        <p className="text-sm text-slate-500 py-2">No items added yet</p>
       )}
 
       {}
       {availableToAdd && availableToAdd.length > 0 && (
         <div className="flex gap-2">
           <Select value={selectedToAdd} onValueChange={setSelectedToAdd}>
-            <SelectTrigger className="flex-1 bg-white/[0.04] border-white/[0.08] text-zinc-300">
+            <SelectTrigger className="flex-1 bg-slate-50 border-slate-200 text-slate-300">
               <SelectValue placeholder={`Add ${referenceType}...`} />
             </SelectTrigger>
-            <SelectContent className="bg-white/[0.05] border-white/[0.08]">
+            <SelectContent className="bg-slate-50 border-slate-200">
               {availableToAdd.map((doc) => (
                 <SelectItem
                   key={doc.documentId}
                   value={doc.documentId}
-                  className="text-zinc-300 focus:bg-zinc-700 focus:text-white"
+                  className="text-slate-300 focus:bg-slate-700 focus:text-white"
                 >
                   <Suspense fallback={doc.documentId}>
                     <AvailableDocumentOption {...doc} />
@@ -190,7 +190,7 @@ function ReferenceArrayInputField({
             onClick={handleAdd}
             disabled={!selectedToAdd}
             size="icon"
-            className="bg-violet-600 hover:bg-violet-500 text-white"
+            className="bg-blue-700 hover:bg-blue-600 text-white"
           >
             <Plus className="h-4 w-4" />
           </Button>

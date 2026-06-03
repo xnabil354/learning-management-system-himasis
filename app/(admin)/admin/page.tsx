@@ -50,21 +50,21 @@ function StatCard({
 }: StatCardProps) {
   return (
     <Link href={href} className="group">
-      <div className="relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/[0.06] p-5 hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-300">
+      <div className="relative overflow-hidden rounded-xl bg-white border border-slate-200 p-5 hover:bg-slate-50 hover:border-slate-200 transition-all duration-300">
         <div className="flex items-start justify-between mb-6">
           <div
             className={`flex h-10 w-10 items-center justify-center rounded-lg ${iconBg}`}
           >
             <Icon className={`h-5 w-5 ${accent}`} />
           </div>
-          <ArrowUpRight className="h-4 w-4 text-zinc-700 group-hover:text-zinc-400 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+          <ArrowUpRight className="h-4 w-4 text-slate-700 group-hover:text-slate-400 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
         </div>
         <Suspense
-          fallback={<Skeleton className="h-9 w-12 bg-white/[0.04] rounded" />}
+          fallback={<Skeleton className="h-9 w-12 bg-slate-50 rounded" />}
         >
           <StatCardContent documentType={documentType} />
         </Suspense>
-        <p className="text-[13px] text-zinc-500 mt-1 font-medium">{title}</p>
+        <p className="text-[13px] text-slate-500 mt-1 font-medium">{title}</p>
       </div>
     </Link>
   );
@@ -76,8 +76,8 @@ const STAT_CARDS: StatCardProps[] = [
     icon: BookOpen,
     documentType: "course",
     href: "/admin/courses",
-    accent: "text-violet-400",
-    iconBg: "bg-violet-500/10",
+    accent: "text-blue-600",
+    iconBg: "bg-blue-600/10",
   },
   {
     title: "Modules",
@@ -159,11 +159,11 @@ function ContentHealthContent() {
         <span className="text-sm font-medium text-white">
           {percentage}% Complete
         </span>
-        <span className="text-xs text-zinc-600">
+        <span className="text-xs text-slate-600">
           {passedCount}/{checks.length} checks
         </span>
       </div>
-      <div className="h-1.5 bg-white/[0.04] rounded-full overflow-hidden">
+      <div className="h-1.5 bg-slate-50 rounded-full overflow-hidden">
         <div
           className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full transition-all duration-700 ease-out"
           style={{ width: `${percentage}%` }}
@@ -176,16 +176,16 @@ function ContentHealthContent() {
               {check.passed ? (
                 <CheckCircle2 className="h-4 w-4 text-emerald-500" />
               ) : (
-                <Circle className="h-4 w-4 text-zinc-700" />
+                <Circle className="h-4 w-4 text-slate-700" />
               )}
               <span
-                className={`text-sm ${check.passed ? "text-zinc-300" : "text-zinc-600"}`}
+                className={`text-sm ${check.passed ? "text-slate-300" : "text-slate-600"}`}
               >
                 {check.label}
               </span>
             </div>
             <span
-              className={`text-xs font-mono ${check.passed ? "text-zinc-500" : "text-zinc-700"}`}
+              className={`text-xs font-mono ${check.passed ? "text-slate-500" : "text-slate-700"}`}
             >
               {check.count}
             </span>
@@ -202,7 +202,7 @@ const QUICK_LINKS = [
     desc: "Create and manage courses",
     href: "/admin/courses",
     icon: BookOpen,
-    accent: "text-violet-400",
+    accent: "text-blue-600",
   },
   {
     label: "Modules",
@@ -258,14 +258,14 @@ export default function AdminDashboard() {
           <h1 className="text-2xl font-semibold tracking-tight text-white">
             Dashboard
           </h1>
-          <p className="text-sm text-zinc-500 mt-1">
+          <p className="text-sm text-slate-500 mt-1">
             Overview of your content management system
           </p>
         </div>
         <Link href="/studio" target="_blank">
           <button
             type="button"
-            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-zinc-400 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:text-white transition-all"
+            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-slate-400 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 hover:text-slate-900 transition-all"
           >
             <ExternalLink className="h-3.5 w-3.5" />
             Open Studio
@@ -281,7 +281,7 @@ export default function AdminDashboard() {
 
       <div className="grid gap-6 lg:grid-cols-5">
         <div className="lg:col-span-3 space-y-5">
-          <h2 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
+          <h2 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
             Quick Access
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -289,18 +289,18 @@ export default function AdminDashboard() {
               const Icon = item.icon;
               return (
                 <Link key={item.href} href={item.href} className="group">
-                  <div className="rounded-xl bg-white/[0.02] border border-white/[0.06] p-4 hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300">
+                  <div className="rounded-xl bg-white border border-slate-200 p-4 hover:bg-slate-50 hover:border-slate-200 transition-all duration-300">
                     <div className="flex items-center gap-3">
                       <Icon className={`h-4 w-4 ${item.accent} shrink-0`} />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-zinc-200 group-hover:text-white transition-colors">
+                        <p className="text-sm font-medium text-slate-200 group-hover:text-slate-900 transition-colors">
                           {item.label}
                         </p>
-                        <p className="text-xs text-zinc-600 truncate">
+                        <p className="text-xs text-slate-600 truncate">
                           {item.desc}
                         </p>
                       </div>
-                      <ArrowRight className="h-3.5 w-3.5 text-zinc-700 group-hover:text-zinc-400 group-hover:translate-x-0.5 transition-all shrink-0" />
+                      <ArrowRight className="h-3.5 w-3.5 text-slate-700 group-hover:text-slate-400 group-hover:translate-x-0.5 transition-all shrink-0" />
                     </div>
                   </div>
                 </Link>
@@ -310,18 +310,18 @@ export default function AdminDashboard() {
         </div>
 
         <div className="lg:col-span-2 space-y-5">
-          <h2 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
+          <h2 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
             Content Health
           </h2>
-          <div className="rounded-xl bg-white/[0.02] border border-white/[0.06] p-5">
+          <div className="rounded-xl bg-white border border-slate-200 p-5">
             <Suspense
               fallback={
                 <div className="space-y-4">
-                  <Skeleton className="h-1.5 w-full bg-white/[0.04] rounded-full" />
+                  <Skeleton className="h-1.5 w-full bg-slate-50 rounded-full" />
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="flex items-center gap-2.5">
-                      <Skeleton className="h-4 w-4 bg-white/[0.04] rounded-full" />
-                      <Skeleton className="h-4 w-24 bg-white/[0.04] rounded" />
+                      <Skeleton className="h-4 w-4 bg-slate-50 rounded-full" />
+                      <Skeleton className="h-4 w-24 bg-slate-50 rounded" />
                     </div>
                   ))}
                 </div>
@@ -334,20 +334,20 @@ export default function AdminDashboard() {
       </div>
 
       <div className="space-y-5">
-        <h2 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
+        <h2 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
           Recommended Workflow
         </h2>
-        <div className="rounded-xl bg-white/[0.02] border border-white/[0.06] overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.04]">
+        <div className="rounded-xl bg-white border border-slate-200 overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
             {WORKFLOW_STEPS.map((item) => (
               <div key={item.step} className="p-5 group">
-                <span className="text-[10px] font-bold text-zinc-700 uppercase tracking-widest">
+                <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">
                   Step {item.step}
                 </span>
                 <h3 className="text-sm font-medium text-white mt-2 mb-1">
                   {item.title}
                 </h3>
-                <p className="text-xs text-zinc-600 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {item.desc}
                 </p>
               </div>

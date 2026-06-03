@@ -27,12 +27,12 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
       <button
         disabled={currentPage <= 1}
         onClick={() => replace(createPageURL(currentPage - 1))}
-        className="p-2 rounded-full border border-white/10 hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-white"
+        className="p-2 rounded-full border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-white"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
 
-      <span className="text-sm font-medium text-zinc-400">
+      <span className="text-sm font-medium text-slate-400">
         Page <span className="text-white">{currentPage}</span> of{" "}
         <span className="text-white">{totalPages}</span>
       </span>
@@ -40,7 +40,7 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
       <button
         disabled={currentPage >= totalPages}
         onClick={() => replace(createPageURL(currentPage + 1))}
-        className="p-2 rounded-full border border-white/10 hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-white"
+        className="p-2 rounded-full border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-white"
       >
         <ChevronRight className="w-5 h-5" />
       </button>

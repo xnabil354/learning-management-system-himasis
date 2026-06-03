@@ -15,19 +15,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SISCA | Himasis",
+  title: "SMARTSIS | Himasis",
   description:
     "Master coding the modern way with expertly crafted courses, modules, and hands-on lessons.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "SISCA",
+    title: "SMARTSIS",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#7c3aed",
+  themeColor: "#1e3a5f",
 };
 
 export default function RootLayout({

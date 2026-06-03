@@ -51,13 +51,13 @@ export function SortableLessonItem({
     <div
       ref={setNodeRef}
       style={style}
-      className={`flex items-center gap-2 p-2.5 bg-white/[0.04] border border-white/[0.08] rounded-md ${
+      className={`flex items-center gap-2 p-2.5 bg-slate-50 border border-slate-200 rounded-md ${
         isDragging ? "opacity-50 shadow-lg z-50" : ""
       }`}
     >
       <button
         type="button"
-        className="cursor-grab active:cursor-grabbing touch-none text-zinc-500 hover:text-zinc-300"
+        className="cursor-grab active:cursor-grabbing touch-none text-slate-500 hover:text-slate-300"
         {...attributes}
         {...listeners}
       >
@@ -66,7 +66,7 @@ export function SortableLessonItem({
       <PlayCircle className="h-3.5 w-3.5 text-emerald-400" />
       <Link
         href={editUrl}
-        className="text-sm text-zinc-300 flex-1 hover:text-violet-400 hover:underline transition-colors flex items-center gap-1.5"
+        className="text-sm text-slate-300 flex-1 hover:text-blue-600 hover:underline transition-colors flex items-center gap-1.5"
       >
         {title}
         <ExternalLink className="h-3 w-3 opacity-50" />
@@ -74,7 +74,7 @@ export function SortableLessonItem({
       <Button
         variant="ghost"
         size="icon"
-        className="h-5 w-5 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-700"
+        className="h-5 w-5 text-slate-500 hover:text-slate-300 hover:bg-slate-700"
         onClick={(e) => {
           e.stopPropagation();
           onRemove();

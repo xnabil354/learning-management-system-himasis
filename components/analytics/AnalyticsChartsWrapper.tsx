@@ -11,9 +11,9 @@ const AnalyticsCharts = dynamic(
         {[...Array(4)].map((_, i) => (
           <div
             key={i}
-            className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 h-[350px] animate-pulse flex items-center justify-center"
+            className="rounded-2xl bg-white border border-slate-200 p-6 h-[350px] animate-pulse flex items-center justify-center"
           >
-            <div className="text-zinc-600 text-xs font-medium">
+            <div className="text-slate-600 text-xs font-medium">
               Loading chart...
             </div>
           </div>

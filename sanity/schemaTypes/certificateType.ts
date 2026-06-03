@@ -9,7 +9,7 @@ export const certificateType = defineType({
       name: "certificateId",
       title: "Certificate ID",
       type: "string",
-      description: "Unique certificate identifier (e.g. SISCA-2026-ABCD)",
+      description: "Unique certificate identifier (e.g. SMARTSIS-2026-ABCD)",
       validation: (Rule) => Rule.required(),
     }),
     defineField({

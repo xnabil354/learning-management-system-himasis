@@ -33,7 +33,7 @@ export function ProgressReminderEmail({
       <Body style={main}>
         <Container style={container}>
           <Section style={headerSection}>
-            <Text style={logo}>🎓 SISCA</Text>
+            <Text style={logo}>🎓 SMARTSIS</Text>
             <Text style={subtitle}>HIMASIS E-Learning</Text>
           </Section>
 
@@ -113,7 +113,7 @@ const headerSection = {
 const logo = {
   fontSize: "28px",
   fontWeight: "800" as const,
-  color: "#a78bfa",
+  color: "#60a5fa",
   margin: "0",
 };
 
@@ -172,7 +172,7 @@ const progressBarOuter = {
 };
 
 const progressBarInner = {
-  backgroundColor: "#7c3aed",
+  backgroundColor: "#1d4ed8",
   height: "8px",
   borderRadius: "999px",
 };
@@ -197,7 +197,7 @@ const buttonSection = {
 };
 
 const button = {
-  backgroundColor: "#7c3aed",
+  backgroundColor: "#1d4ed8",
   borderRadius: "8px",
   color: "#ffffff",
   fontSize: "14px",

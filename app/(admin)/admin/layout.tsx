@@ -10,7 +10,7 @@ function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
       <Providers>
-        <div className="dark min-h-screen bg-[#09090b] text-white">
+        <div className="min-h-screen bg-slate-50 text-slate-900">
           <div
             className="fixed inset-0 pointer-events-none opacity-[0.015]"
             style={{

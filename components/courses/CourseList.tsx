@@ -40,13 +40,13 @@ export function CourseList({
       {showSearch && (
         <div className="flex items-center justify-end">
           <div className="relative w-full sm:w-72">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
             <Input
               type="text"
               placeholder="Search courses..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-zinc-900/50 border-zinc-800 text-white placeholder:text-zinc-500 focus-visible:ring-violet-500"
+              className="pl-10 bg-slate-900/50 border-slate-800 text-white placeholder:text-slate-500 focus-visible:ring-blue-600"
             />
           </div>
         </div>
@@ -69,15 +69,15 @@ export function CourseList({
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-16 text-center">
-          <div className="w-16 h-16 rounded-full bg-zinc-800/50 flex items-center justify-center mb-4">
-            <Search className="w-6 h-6 text-zinc-500" />
+          <div className="w-16 h-16 rounded-full bg-slate-800/50 flex items-center justify-center mb-4">
+            <Search className="w-6 h-6 text-slate-500" />
           </div>
-          <p className="text-zinc-400">{emptyMessage}</p>
+          <p className="text-slate-400">{emptyMessage}</p>
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery("")}
-              className="mt-2 text-sm text-violet-400 hover:text-violet-300 transition-colors"
+              className="mt-2 text-sm text-blue-600 hover:text-blue-300 transition-colors"
             >
               Clear search
             </button>

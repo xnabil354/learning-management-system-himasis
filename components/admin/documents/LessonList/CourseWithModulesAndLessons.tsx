@@ -38,18 +38,18 @@ export function CourseWithModulesAndLessons({
   return (
     <AccordionItem
       value={documentId}
-      className="border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02]"
+      className="border border-slate-200 rounded-xl overflow-hidden bg-white"
     >
-      <AccordionTrigger className="px-4 py-3 hover:bg-white/[0.03] hover:no-underline transition-colors [&[data-state=open]]:bg-white/[0.03]">
+      <AccordionTrigger className="px-4 py-3 hover:bg-white hover:no-underline transition-colors [&[data-state=open]]:bg-white">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-violet-500/10">
-            <BookOpen className="h-4 w-4 text-violet-400" />
+          <div className="p-2 rounded-lg bg-blue-600/10">
+            <BookOpen className="h-4 w-4 text-blue-600" />
           </div>
           <div className="text-left">
-            <h3 className="font-medium text-sm text-zinc-200">
+            <h3 className="font-medium text-sm text-slate-200">
               {course?.title || "Untitled Course"}
             </h3>
-            <p className="text-xs text-zinc-600">
+            <p className="text-xs text-slate-600">
               {moduleRefs.length} module{moduleRefs.length === 1 ? "" : "s"}
             </p>
           </div>
@@ -66,7 +66,7 @@ export function CourseWithModulesAndLessons({
               <Suspense
                 key={ref._ref}
                 fallback={
-                  <Skeleton className="h-16 w-full bg-white/[0.03] rounded-lg" />
+                  <Skeleton className="h-16 w-full bg-white rounded-lg" />
                 }
               >
                 <ModuleWithLessons

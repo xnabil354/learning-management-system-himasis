@@ -99,11 +99,11 @@ export default async function MyCoursesPage({
   );
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
       {}
       <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none z-0" />
-      <div className="fixed top-[-10%] right-[-5%] w-[600px] h-[600px] bg-violet-900/20 rounded-full blur-[120px] pointer-events-none z-0" />
-      <div className="fixed bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-fuchsia-900/10 rounded-full blur-[120px] pointer-events-none z-0" />
+      <div className="fixed top-[-10%] right-[-5%] w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none z-0" />
+      <div className="fixed bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
       <Header />
 
@@ -111,31 +111,31 @@ export default async function MyCoursesPage({
         {}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 relative">
           <div className="relative z-10">
-            <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-4">
+            <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter mb-4">
               My Courses
             </h1>
-            <p className="text-zinc-400 max-w-lg text-lg leading-relaxed">
+            <p className="text-slate-500 max-w-lg text-lg leading-relaxed">
               Track your progress and continue mastering your skills.
               <br className="hidden md:block" />
-              <span className="text-violet-400 font-medium">
+              <span className="text-blue-600 font-medium">
                 Keep the streak alive!
               </span>
             </p>
           </div>
 
           {}
-          <div className="flex items-center gap-3 p-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl shadow-2xl">
+          <div className="flex items-center gap-3 p-1.5 rounded-full bg-white border border-slate-200 backdrop-blur-xl shadow-2xl">
             <SearchInput />
-            <div className="w-px h-8 bg-white/10 hidden md:block" />
+            <div className="w-px h-8 bg-slate-200 hidden md:block" />
 
             <div className="flex items-center gap-2">
               <CourseFilters />
 
-              <div className="p-1 rounded-full bg-white/5 border border-white/5 flex gap-1 ml-2">
-                <button className="p-2 rounded-full bg-white/10 text-white shadow-sm">
+              <div className="p-1 rounded-full bg-slate-50 border border-slate-200 flex gap-1 ml-2">
+                <button className="p-2 rounded-full bg-blue-50 text-blue-600 shadow-sm">
                   <LayoutGrid className="w-4 h-4" />
                 </button>
-                <button className="p-2 rounded-full hover:bg-white/5 text-zinc-500 hover:text-white transition-colors">
+                <button className="p-2 rounded-full hover:bg-slate-50 text-slate-500 hover:text-slate-900 transition-colors">
                   <List className="w-4 h-4" />
                 </button>
               </div>
@@ -143,7 +143,7 @@ export default async function MyCoursesPage({
           </div>
 
           {}
-          <div className="absolute -top-10 -left-10 w-full h-full bg-gradient-to-r from-violet-500/5 via-transparent to-transparent blur-3xl -z-10 opacity-50" />
+          <div className="absolute -top-10 -left-10 w-full h-full bg-gradient-to-r from-blue-600/5 via-transparent to-transparent blur-3xl -z-10 opacity-50" />
         </div>
 
         {paginatedCourses.length > 0 ? (
@@ -172,20 +172,20 @@ export default async function MyCoursesPage({
             <Pagination totalPages={totalPages} />
           </>
         ) : (
-          <div className="flex flex-col items-center justify-center py-32 text-center relative overflow-hidden rounded-3xl bg-white/[0.02] border border-white/[0.05]">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-900/5 to-transparent opacity-50" />
-            <div className="relative z-10 w-24 h-24 rounded-full bg-gradient-to-tr from-violet-500/20 to-fuchsia-500/20 flex items-center justify-center mb-6 ring-1 ring-white/10 shadow-[0_0_50px_rgba(139,92,246,0.1)] animate-pulse">
-              <BookOpen className="w-10 h-10 text-violet-300" />
+          <div className="flex flex-col items-center justify-center py-32 text-center relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/50 to-transparent opacity-50" />
+            <div className="relative z-10 w-24 h-24 rounded-full bg-gradient-to-tr from-blue-50 to-sky-50 flex items-center justify-center mb-6 ring-1 ring-slate-200 shadow-sm">
+              <BookOpen className="w-10 h-10 text-blue-600" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-white">
+            <h3 className="text-2xl font-bold mb-2 text-slate-900">
               {query ? "No courses found" : "No courses started yet"}
             </h3>
-            <p className="text-zinc-500 text-lg max-w-md mx-auto mb-8">
+            <p className="text-slate-500 text-lg max-w-md mx-auto mb-8">
               {query
                 ? `No results for "${query}". Try another search term.`
                 : "Browse our catalog to find your next challenge."}
             </p>
-            <button className="px-8 py-3 rounded-full bg-white text-black font-bold hover:bg-zinc-200 transition-colors shadow-lg shadow-white/10">
+            <button className="px-8 py-3 rounded-full bg-blue-600 text-white font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20">
               Explore Catalog
             </button>
           </div>

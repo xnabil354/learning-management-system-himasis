@@ -25,8 +25,8 @@ type ImageFieldValue = Course["thumbnail"];
 function ImageInputFallback({ label }: { label: string }) {
   return (
     <div className="space-y-2">
-      <Label className="text-zinc-300">{label}</Label>
-      <Skeleton className="h-32 w-full bg-white/[0.05]" />
+      <Label className="text-slate-300">{label}</Label>
+      <Skeleton className="h-32 w-full bg-slate-50" />
     </div>
   );
 }
@@ -100,7 +100,7 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
 
   return (
     <div className="space-y-2">
-      <Label className="text-zinc-300">{label}</Label>
+      <Label className="text-slate-300">{label}</Label>
 
       <input
         ref={fileInputRef}
@@ -112,7 +112,7 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
       />
 
       <div
-        className={`relative rounded-lg border border-white/[0.08] bg-white/[0.03] ${
+        className={`relative rounded-lg border border-slate-200 bg-white ${
           isUploading ? "pointer-events-none opacity-60" : ""
         }`}
       >
@@ -126,14 +126,14 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
               className="w-full h-auto rounded-lg object-cover aspect-video"
             />
 
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center gap-2">
+            <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center gap-2">
               <Button
                 type="button"
                 variant="secondary"
                 size="sm"
                 onClick={handleClick}
                 disabled={isUploading}
-                className="bg-white/[0.05] hover:bg-zinc-700"
+                className="bg-slate-50 hover:bg-slate-700"
               >
                 <Upload className="h-4 w-4 mr-1" />
                 Replace
@@ -152,7 +152,7 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
 
             {isUploading && (
               <div className="absolute inset-0 bg-black/70 rounded-lg flex items-center justify-center">
-                <Loader2 className="h-8 w-8 animate-spin text-violet-500" />
+                <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
               </div>
             )}
           </div>
@@ -161,18 +161,18 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
             type="button"
             onClick={handleClick}
             disabled={isUploading}
-            className="w-full py-8 flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-400 transition-colors cursor-pointer"
+            className="w-full py-8 flex flex-col items-center justify-center text-slate-500 hover:text-slate-400 transition-colors cursor-pointer"
           >
             {isUploading ? (
               <>
-                <Loader2 className="h-10 w-10 mb-2 animate-spin text-violet-500" />
+                <Loader2 className="h-10 w-10 mb-2 animate-spin text-blue-600" />
                 <p className="text-sm">Uploading...</p>
               </>
             ) : (
               <>
                 <ImageIcon className="h-10 w-10 mb-2" />
                 <p className="text-sm font-medium">Click to upload</p>
-                <p className="text-xs mt-1 text-zinc-600">
+                <p className="text-xs mt-1 text-slate-600">
                   JPEG, PNG, GIF, or WebP (max 10MB)
                 </p>
               </>

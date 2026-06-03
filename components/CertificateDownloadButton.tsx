@@ -26,7 +26,7 @@ export const CertificateDownloadButton = ({
     return (
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06] text-zinc-500 text-sm cursor-wait"
+        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-500 text-sm cursor-wait"
       >
         <Loader2 className="h-3.5 w-3.5 animate-spin" />
         <span>Preparing Certificate...</span>
@@ -34,7 +34,7 @@ export const CertificateDownloadButton = ({
     );
   }
 
-  const certificateId = `SISCA-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`;
+  const certificateId = `SMARTSIS-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`;
   const formattedDate = completedAt.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -56,12 +56,12 @@ export const CertificateDownloadButton = ({
             certificateId={certificateId}
           />
         }
-        fileName={`SISCA-Certificate-${courseTitle.replace(/\s+/g, "-")}.pdf`}
+        fileName={`SMARTSIS-Certificate-${courseTitle.replace(/\s+/g, "-")}.pdf`}
         style={{ textDecoration: "none" }}
       >
         {({ loading }: any) => (
           <span
-            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 bg-gradient-to-r from-amber-900/30 via-yellow-900/20 to-amber-900/30 border border-amber-500/20 text-amber-200 hover:border-amber-400/40 hover:text-amber-100 hover:shadow-[0_0_20px_rgba(217,170,93,0.1)] cursor-pointer group"
+            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border border-amber-200 text-amber-700 hover:border-amber-300 hover:text-amber-800 hover:shadow-md hover:shadow-amber-100 cursor-pointer group"
             style={loading ? { opacity: 0.5, cursor: "wait" } : {}}
           >
             {loading ? (

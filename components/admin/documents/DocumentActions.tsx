@@ -20,8 +20,8 @@ interface DocumentActionsProps extends DocumentHandle {}
 function DocumentActionsFallback() {
   return (
     <div className="flex items-center gap-2">
-      <Skeleton className="h-8 w-20 bg-white/[0.05] rounded-lg" />
-      <Skeleton className="h-8 w-8 bg-white/[0.05] rounded-lg" />
+      <Skeleton className="h-8 w-20 bg-slate-50 rounded-lg" />
+      <Skeleton className="h-8 w-8 bg-slate-50 rounded-lg" />
     </div>
   );
 }
@@ -85,7 +85,7 @@ function DocumentActionsContent({
               }),
             );
           }}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-zinc-400 border border-white/[0.08] rounded-lg hover:bg-white/[0.05] hover:border-zinc-600 hover:text-zinc-300 transition-colors"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-slate-400 border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-600 hover:text-slate-300 transition-colors"
         >
           <RotateCcw className="h-4 w-4" />
           Discard
@@ -104,7 +104,7 @@ function DocumentActionsContent({
               }),
             )
           }
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-zinc-400 border border-white/[0.08] rounded-lg hover:bg-white/[0.05] hover:border-zinc-600 hover:text-zinc-300 transition-colors"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-slate-400 border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-600 hover:text-slate-300 transition-colors"
         >
           <Download className="h-4 w-4" />
           Unpublish
@@ -123,7 +123,7 @@ function DocumentActionsContent({
               }),
             )
           }
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-white bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 rounded-lg shadow-lg shadow-violet-500/20 transition-all"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-white bg-linear-to-r from-blue-700 to-sky-600 hover:from-blue-600 hover:to-sky-500 rounded-lg shadow-lg shadow-blue-600/20 transition-all"
         >
           <Upload className="h-4 w-4" />
           Publish
@@ -156,7 +156,7 @@ function DocumentActionsContent({
           }
           router.push(getListUrl());
         }}
-        className="h-8 w-8 inline-flex items-center justify-center text-zinc-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
+        className="h-8 w-8 inline-flex items-center justify-center text-slate-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
         title="Delete"
       >
         <Trash2 className="h-4 w-4" />

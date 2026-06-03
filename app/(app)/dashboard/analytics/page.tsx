@@ -73,10 +73,10 @@ export default async function AnalyticsPage() {
       label: "Avg. Progress",
       value: `${avgProgress}%`,
       icon: TrendingUp,
-      color: "text-violet-400",
-      bg: "bg-violet-500/10",
-      border: "border-violet-500/20",
-      glow: "shadow-violet-500/5",
+      color: "text-blue-600",
+      bg: "bg-blue-600/10",
+      border: "border-blue-600/20",
+      glow: "shadow-blue-600/5",
     },
     {
       label: "Courses Done",
@@ -99,25 +99,25 @@ export default async function AnalyticsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans antialiased">
+    <div className="min-h-screen bg-white text-white font-sans antialiased">
       <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none z-0" />
-      <div className="fixed top-[-20%] left-[-10%] w-[1000px] h-[1000px] bg-violet-600/8 rounded-full blur-[120px] animate-pulse pointer-events-none z-[-1]" />
+      <div className="fixed top-[-20%] left-[-10%] w-[1000px] h-[1000px] bg-blue-700/8 rounded-full blur-[120px] animate-pulse pointer-events-none z-[-1]" />
       <div
-        className="fixed bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-fuchsia-600/8 rounded-full blur-[120px] animate-pulse pointer-events-none z-[-1]"
+        className="fixed bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-sky-600/8 rounded-full blur-[120px] animate-pulse pointer-events-none z-[-1]"
         style={{ animationDelay: "2s" }}
       />
 
-      <header className="sticky top-0 z-40 h-16 flex items-center justify-between px-6 lg:px-10 border-b border-white/[0.04] bg-black/40 backdrop-blur-2xl">
-        <div className="flex items-center gap-3 text-zinc-500 text-xs font-medium">
+      <header className="sticky top-0 z-40 h-16 flex items-center justify-between px-6 lg:px-10 border-b border-slate-200 bg-white/80 backdrop-blur-2xl">
+        <div className="flex items-center gap-3 text-slate-500 text-xs font-medium">
           <Link
             href="/dashboard"
-            className="hover:text-white transition-colors flex items-center gap-1.5"
+            className="hover:text-slate-900 transition-colors flex items-center gap-1.5"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Dashboard
           </Link>
           <ChevronRight className="w-3 h-3" />
-          <span className="text-white px-2 py-0.5 rounded-md bg-white/5 border border-white/5">
+          <span className="text-white px-2 py-0.5 rounded-md bg-slate-50 border border-slate-200">
             Analytics
           </span>
         </div>
@@ -125,22 +125,22 @@ export default async function AnalyticsPage() {
 
       <main className="px-6 lg:px-10 pb-12 max-w-[1400px] mx-auto space-y-8">
         <div className="relative mt-6 group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-cyan-600 to-violet-600 rounded-3xl blur opacity-15 group-hover:opacity-25 transition-opacity duration-1000" />
-          <div className="relative p-8 rounded-2xl bg-[#09090b]/80 backdrop-blur-3xl border border-white/[0.08] overflow-hidden">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-violet-600/8 to-transparent rounded-full blur-[80px]" />
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-700 rounded-3xl blur opacity-15 group-hover:opacity-25 transition-opacity duration-1000" />
+          <div className="relative p-8 rounded-2xl bg-white/80 backdrop-blur-3xl border border-slate-200 overflow-hidden">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-blue-700/8 to-transparent rounded-full blur-[80px]" />
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-wider text-violet-300">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-[10px] font-bold uppercase tracking-wider text-blue-300">
                   <BarChart3 className="w-3 h-3" />
                   <span>Analytics Dashboard</span>
                 </div>
                 <h1 className="text-3xl md:text-4xl font-black text-white tracking-tighter">
                   Analisis Progress,{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-violet-400">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-600">
                     {firstName}
                   </span>
                 </h1>
-                <p className="text-zinc-400 text-sm max-w-lg">
+                <p className="text-slate-400 text-sm max-w-lg">
                   Pantau kemajuan belajar, identifikasi area yang perlu
                   ditingkatkan, dan capai targetmu lebih cepat.
                 </p>
@@ -153,11 +153,11 @@ export default async function AnalyticsPage() {
           {kpis.map((kpi, i) => (
             <div
               key={i}
-              className={`group p-5 rounded-2xl bg-white/[0.03] border ${kpi.border} hover:bg-white/[0.05] transition-all duration-300 backdrop-blur-sm shadow-lg ${kpi.glow}`}
+              className={`group p-5 rounded-2xl bg-white border ${kpi.border} hover:bg-slate-50 transition-all duration-300 backdrop-blur-sm shadow-lg ${kpi.glow}`}
             >
               <div className="flex items-start justify-between">
                 <div>
-                  <p className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-1.5">
+                  <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-1.5">
                     {kpi.label}
                   </p>
                   <p className="text-2xl font-black text-white tracking-tight">
@@ -176,14 +176,14 @@ export default async function AnalyticsPage() {
 
         <AnalyticsChartsWrapper data={analytics} userId={user.id} />
 
-        <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 backdrop-blur-sm overflow-hidden">
+        <div className="rounded-2xl bg-white border border-slate-200 p-6 backdrop-blur-sm overflow-hidden">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center">
-              <BookOpen className="w-4 h-4 text-violet-400" />
+            <div className="w-9 h-9 rounded-xl bg-blue-600/10 flex items-center justify-center">
+              <BookOpen className="w-4 h-4 text-blue-600" />
             </div>
             <div>
               <h3 className="text-sm font-bold text-white">Course Breakdown</h3>
-              <p className="text-[11px] text-zinc-500">
+              <p className="text-[11px] text-slate-500">
                 Detail progress per course
               </p>
             </div>
@@ -192,23 +192,23 @@ export default async function AnalyticsPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-white/[0.06]">
-                  <th className="text-left py-3 px-4 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                <tr className="border-b border-slate-200">
+                  <th className="text-left py-3 px-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                     Course
                   </th>
-                  <th className="text-left py-3 px-4 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                  <th className="text-left py-3 px-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                     Kategori
                   </th>
-                  <th className="text-center py-3 px-4 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                  <th className="text-center py-3 px-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                     Modul
                   </th>
-                  <th className="text-center py-3 px-4 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                  <th className="text-center py-3 px-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                     Lesson
                   </th>
-                  <th className="text-left py-3 px-4 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                  <th className="text-left py-3 px-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                     Progress
                   </th>
-                  <th className="text-center py-3 px-4 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                  <th className="text-center py-3 px-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                     Status
                   </th>
                 </tr>
@@ -237,35 +237,35 @@ export default async function AnalyticsPage() {
                   return (
                     <tr
                       key={course._id}
-                      className="border-b border-white/[0.03] hover:bg-white/[0.02] transition-colors"
+                      className="border-b border-white/[0.03] hover:bg-white transition-colors"
                     >
                       <td className="py-3 px-4">
                         <Link
                           href={`/courses/${course.slug}`}
-                          className="text-white font-medium hover:text-violet-300 transition-colors"
+                          className="text-white font-medium hover:text-blue-300 transition-colors"
                         >
                           {course.title}
                         </Link>
                       </td>
-                      <td className="py-3 px-4 text-zinc-400 text-xs">
+                      <td className="py-3 px-4 text-slate-400 text-xs">
                         {course.category?.title || "—"}
                       </td>
-                      <td className="py-3 px-4 text-center text-zinc-400 font-mono text-xs">
+                      <td className="py-3 px-4 text-center text-slate-400 font-mono text-xs">
                         {course.moduleCount}
                       </td>
-                      <td className="py-3 px-4 text-center text-zinc-400 font-mono text-xs">
+                      <td className="py-3 px-4 text-center text-slate-400 font-mono text-xs">
                         {cl}/{tl}
                       </td>
                       <td className="py-3 px-4">
                         <div className="flex items-center gap-3">
-                          <div className="flex-1 h-1.5 bg-white/[0.06] rounded-full overflow-hidden max-w-[120px]">
+                          <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden max-w-[120px]">
                             <div
-                              className={`h-full rounded-full transition-all duration-700 ${isDone ? "bg-emerald-500" : "bg-violet-500"}`}
+                              className={`h-full rounded-full transition-all duration-700 ${isDone ? "bg-emerald-500" : "bg-blue-600"}`}
                               style={{ width: `${pct}%` }}
                             />
                           </div>
                           <span
-                            className={`text-xs font-mono font-bold ${isDone ? "text-emerald-400" : "text-violet-400"}`}
+                            className={`text-xs font-mono font-bold ${isDone ? "text-emerald-400" : "text-blue-600"}`}
                           >
                             {pct}%
                           </span>
@@ -277,11 +277,11 @@ export default async function AnalyticsPage() {
                             ✓ Selesai
                           </span>
                         ) : pct > 0 ? (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-400 text-[10px] font-bold">
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-600 text-[10px] font-bold">
                             ⏳ Aktif
                           </span>
                         ) : (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-zinc-500/10 text-zinc-500 text-[10px] font-bold">
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-500/10 text-slate-500 text-[10px] font-bold">
                             — Belum
                           </span>
                         )}

@@ -30,7 +30,7 @@ export function OrphanLessons({ documents }: OrphanLessonsProps) {
         {documents.map((doc) => (
           <Suspense
             key={doc.documentId}
-            fallback={<Skeleton className="h-12 w-full bg-white/[0.04]" />}
+            fallback={<Skeleton className="h-12 w-full bg-slate-50" />}
           >
             <LessonItem {...doc} />
           </Suspense>

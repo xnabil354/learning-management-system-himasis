@@ -6,8 +6,8 @@ import type { LeaderboardEntry } from "@/lib/actions/gamification";
 import { Trophy, Medal, Crown, Flame, Star, TrendingUp } from "lucide-react";
 
 export const metadata = {
-  title: "Leaderboard — SISCA",
-  description: "Top learners di SISCA Academy",
+  title: "Leaderboard — SMARTSIS",
+  description: "Top learners di SMARTSIS Academy",
 };
 
 export default async function LeaderboardPage() {
@@ -23,11 +23,11 @@ export default async function LeaderboardPage() {
   const myRank = leaderboard.findIndex((e) => e.clerkUserId === userId) + 1;
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-amber-600/10 rounded-full blur-[120px] animate-pulse" />
         <div
-          className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[100px] animate-pulse"
+          className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-700/10 rounded-full blur-[100px] animate-pulse"
           style={{ animationDelay: "1s" }}
         />
       </div>
@@ -40,16 +40,16 @@ export default async function LeaderboardPage() {
             <Trophy className="w-8 h-8 text-amber-400" />
           </div>
           <h1 className="text-4xl font-bold tracking-tight">Leaderboard</h1>
-          <p className="text-zinc-400 mt-2">
-            Top learners di SISCA Academy bulan ini
+          <p className="text-slate-400 mt-2">
+            Top learners di SMARTSIS Academy bulan ini
           </p>
         </div>
 
         {myProgress && myLevel && (
-          <div className="mb-10 p-6 bg-gradient-to-r from-violet-500/10 via-purple-500/5 to-fuchsia-500/10 border border-violet-500/20 rounded-2xl">
+          <div className="mb-10 p-6 bg-gradient-to-r from-blue-600/10 via-purple-500/5 to-sky-500/10 border border-blue-600/20 rounded-2xl">
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <div className="relative">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center text-2xl font-bold">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-sky-600 flex items-center justify-center text-2xl font-bold">
                   {myLevel.level}
                 </div>
                 {myRank > 0 && (
@@ -62,10 +62,10 @@ export default async function LeaderboardPage() {
                 <h2 className="text-xl font-bold">
                   {myProgress.userName || "You"}
                 </h2>
-                <p className="text-violet-300 text-sm font-medium">
+                <p className="text-blue-700 text-sm font-medium">
                   {myLevel.title} — Level {myLevel.level}
                 </p>
-                <div className="mt-2 flex items-center gap-4 justify-center sm:justify-start text-sm text-zinc-400">
+                <div className="mt-2 flex items-center gap-4 justify-center sm:justify-start text-sm text-slate-400">
                   <span className="flex items-center gap-1">
                     <Star className="w-3.5 h-3.5 text-amber-400" />{" "}
                     {myProgress.totalXp} XP
@@ -77,13 +77,13 @@ export default async function LeaderboardPage() {
                 </div>
 
                 <div className="mt-3 w-full max-w-xs mx-auto sm:mx-0">
-                  <div className="flex justify-between text-[10px] text-zinc-500 mb-1">
+                  <div className="flex justify-between text-[10px] text-slate-500 mb-1">
                     <span>Level {myLevel.level}</span>
                     <span>{Math.round(myLevel.progress)}%</span>
                   </div>
-                  <div className="h-2 bg-white/[0.06] rounded-full overflow-hidden">
+                  <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full transition-all duration-1000"
+                      className="h-full bg-gradient-to-r from-blue-600 to-sky-500 rounded-full transition-all duration-1000"
                       style={{ width: `${myLevel.progress}%` }}
                     />
                   </div>
@@ -99,7 +99,7 @@ export default async function LeaderboardPage() {
                     return (
                       <div
                         key={badge.id}
-                        className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-lg"
+                        className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-lg"
                         title={
                           def ? `${def.name}: ${def.description}` : badge.name
                         }
@@ -114,8 +114,8 @@ export default async function LeaderboardPage() {
           </div>
         )}
 
-        <div className="bg-[#0F0F10] border border-white/[0.08] rounded-2xl overflow-hidden">
-          <div className="grid grid-cols-[60px_1fr_100px_100px_80px] gap-4 px-6 py-4 border-b border-white/[0.06] text-xs text-zinc-500 uppercase tracking-wider font-medium">
+        <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+          <div className="grid grid-cols-[60px_1fr_100px_100px_80px] gap-4 px-6 py-4 border-b border-slate-200 text-xs text-slate-500 uppercase tracking-wider font-medium">
             <span>Rank</span>
             <span>Student</span>
             <span className="text-center">XP</span>
@@ -124,7 +124,7 @@ export default async function LeaderboardPage() {
           </div>
 
           {leaderboard.length === 0 ? (
-            <div className="px-6 py-16 text-center text-zinc-500">
+            <div className="px-6 py-16 text-center text-slate-500">
               <TrendingUp className="w-10 h-10 mx-auto mb-3 opacity-30" />
               <p>Belum ada data. Mulai belajar untuk muncul di leaderboard!</p>
             </div>
@@ -155,25 +155,25 @@ function LeaderboardRow({
     entry.rank === 1 ? (
       <Crown className="w-5 h-5 text-amber-400" />
     ) : entry.rank === 2 ? (
-      <Medal className="w-5 h-5 text-zinc-300" />
+      <Medal className="w-5 h-5 text-slate-300" />
     ) : entry.rank === 3 ? (
       <Medal className="w-5 h-5 text-amber-700" />
     ) : (
-      <span className="text-sm text-zinc-500 font-mono">{entry.rank}</span>
+      <span className="text-sm text-slate-500 font-mono">{entry.rank}</span>
     );
 
   return (
     <div
-      className={`grid grid-cols-[60px_1fr_100px_100px_80px] gap-4 px-6 py-4 items-center border-b border-white/[0.03] transition-colors ${
+      className={`grid grid-cols-[60px_1fr_100px_100px_80px] gap-4 px-6 py-4 items-center border-b border-slate-200 transition-colors ${
         isCurrentUser
-          ? "bg-violet-500/[0.06] border-l-2 border-l-violet-500"
-          : "hover:bg-white/[0.02]"
+          ? "bg-blue-50 border-l-2 border-l-blue-600"
+          : "hover:bg-slate-50"
       }`}
     >
       <div className="flex items-center justify-center">{rankIcon}</div>
 
       <div className="flex items-center gap-3 min-w-0">
-        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center text-sm font-bold shrink-0 overflow-hidden">
+        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-600 to-sky-600 flex items-center justify-center text-sm font-bold shrink-0 overflow-hidden">
           {entry.userImage ? (
             <img
               src={entry.userImage}
@@ -185,13 +185,13 @@ function LeaderboardRow({
           )}
         </div>
         <div className="min-w-0">
-          <p className="font-semibold text-white truncate text-sm">
+          <p className="font-semibold text-slate-900 truncate text-sm">
             {entry.userName || "Student"}
             {isCurrentUser && (
-              <span className="ml-2 text-xs text-violet-400">(You)</span>
+              <span className="ml-2 text-xs text-blue-600">(You)</span>
             )}
           </p>
-          <p className="text-xs text-zinc-500">
+          <p className="text-xs text-slate-500">
             {level.title} • Lvl {level.level}
           </p>
         </div>
@@ -201,10 +201,10 @@ function LeaderboardRow({
         <span className="text-amber-400 font-bold text-sm">
           {entry.totalXp}
         </span>
-        <span className="text-zinc-600 text-xs ml-0.5">XP</span>
+        <span className="text-slate-600 text-xs ml-0.5">XP</span>
       </div>
 
-      <div className="text-center text-zinc-300 text-sm">
+      <div className="text-center text-slate-600 text-sm">
         {entry.lessonsCompleted}
       </div>
 
@@ -222,7 +222,7 @@ function LeaderboardRow({
           );
         })}
         {(entry.badges || []).length > 3 && (
-          <span className="text-[10px] text-zinc-500">
+          <span className="text-[10px] text-slate-500">
             +{entry.badges.length - 3}
           </span>
         )}

@@ -6,7 +6,7 @@ export default function OfflinePage() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Offline — SISCA</title>
+        <title>Offline — SMARTSIS</title>
       </head>
       <body
         style={{
@@ -91,7 +91,7 @@ export default function OfflinePage() {
               color: "#3f3f46",
             }}
           >
-            SISCA — Himasis Academy
+            SMARTSIS — Himasis Academy
           </p>
         </div>
       </body>

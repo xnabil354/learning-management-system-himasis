@@ -142,7 +142,7 @@ function AdminBreadcrumb() {
 
   return (
     <Breadcrumb>
-      <BreadcrumbList className="text-zinc-500">
+      <BreadcrumbList className="text-slate-500">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
@@ -150,16 +150,16 @@ function AdminBreadcrumb() {
               key={`${item.href}-${item.label}`}
               className="flex items-center gap-2"
             >
-              {index > 0 && <BreadcrumbSeparator className="text-zinc-600" />}
+              {index > 0 && <BreadcrumbSeparator className="text-slate-600" />}
               <BreadcrumbItem>
                 {isLast ? (
-                  <BreadcrumbPage className="text-zinc-300 truncate max-w-[180px]">
+                  <BreadcrumbPage className="text-slate-300 truncate max-w-[180px]">
                     {item.label}
                   </BreadcrumbPage>
                 ) : (
                   <BreadcrumbLink
                     href={item.href}
-                    className="hover:text-zinc-300 truncate max-w-[120px]"
+                    className="hover:text-slate-300 truncate max-w-[120px]"
                   >
                     {item.label}
                   </BreadcrumbLink>

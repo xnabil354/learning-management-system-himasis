@@ -134,18 +134,18 @@ export function QuizSection({
 
   if (state === "idle") {
     return (
-      <div className="bg-gradient-to-br from-violet-500/[0.08] via-[#0F0F10] to-fuchsia-500/[0.08] border border-violet-500/20 rounded-2xl p-6 md:p-8">
+      <div className="bg-gradient-to-br from-blue-50 via-white to-sky-50 border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm">
         <div className="flex items-start gap-4 mb-6">
-          <div className="p-3 rounded-xl bg-violet-500/10 border border-violet-500/20 shrink-0">
-            <Brain className="w-6 h-6 text-violet-400" />
+          <div className="p-3 rounded-xl bg-blue-600/10 border border-blue-600/20 shrink-0">
+            <Brain className="w-6 h-6 text-blue-600" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-white mb-1">
+            <h3 className="text-xl font-bold text-slate-900 mb-1">
               Quiz Assessment
             </h3>
-            <p className="text-zinc-400 text-sm">
+            <p className="text-slate-600 text-sm">
               Test pemahamanmu tentang materi di lesson ini. Terdapat{" "}
-              <span className="text-white font-semibold">
+              <span className="text-slate-900 font-semibold">
                 {totalQuestions} pertanyaan
               </span>{" "}
               multiple choice.
@@ -154,8 +154,8 @@ export function QuizSection({
         </div>
 
         {previousResult && (
-          <div className="mb-6 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-            <h4 className="text-xs text-zinc-500 uppercase tracking-wider font-medium mb-2">
+          <div className="mb-6 p-4 rounded-xl bg-white border border-slate-200">
+            <h4 className="text-xs text-slate-500 uppercase tracking-wider font-medium mb-2">
               Hasil Terbaik Sebelumnya
             </h4>
             <div className="flex items-center gap-4">
@@ -170,12 +170,12 @@ export function QuizSection({
               >
                 {previousResult.score}%
               </div>
-              <div className="text-sm text-zinc-400">
+              <div className="text-sm text-slate-400">
                 <p>
                   {previousResult.correctAnswers}/
                   {previousResult.totalQuestions} jawaban benar
                 </p>
-                <p className="text-zinc-500">
+                <p className="text-slate-500">
                   {previousResult.attempts}x percobaan
                 </p>
               </div>
@@ -186,17 +186,17 @@ export function QuizSection({
         <div className="flex items-center gap-3">
           <button
             onClick={handleStartQuiz}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-semibold text-sm shadow-lg shadow-violet-600/25 transition-all"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-700 to-sky-600 hover:from-blue-600 hover:to-sky-500 text-white font-semibold text-sm shadow-lg shadow-blue-700/25 transition-all"
           >
             <Sparkles className="w-4 h-4" />
             {previousResult ? "Coba Lagi" : "Mulai Quiz"}
           </button>
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-slate-500">
             ⏱ ~{Math.max(1, Math.ceil(totalQuestions * 0.5))} menit
           </span>
         </div>
 
-        <div className="mt-4 flex items-center gap-2 text-xs text-zinc-500">
+        <div className="mt-4 flex items-center gap-2 text-xs text-slate-500">
           <Trophy className="w-3.5 h-3.5 text-amber-500" />
           <span>
             Skor sempurna (100%) ={" "}
@@ -212,10 +212,10 @@ export function QuizSection({
     const selectedIdx = selectedAnswers[currentQuestion];
 
     return (
-      <div className="bg-[#0F0F10] border border-white/[0.08] rounded-2xl overflow-hidden">
-        <div className="h-1 bg-white/[0.04]">
+      <div className="bg-white border border-slate-200 shadow-sm rounded-2xl overflow-hidden">
+        <div className="h-1 bg-slate-50">
           <div
-            className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-500 ease-out"
+            className="h-full bg-gradient-to-r from-blue-600 to-sky-500 transition-all duration-500 ease-out"
             style={{
               width: `${(Object.keys(selectedAnswers).length / totalQuestions) * 100}%`,
             }}
@@ -224,7 +224,7 @@ export function QuizSection({
 
         <div className="p-6 md:p-8">
           <div className="flex items-center justify-between mb-6">
-            <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
+            <span className="text-xs text-slate-500 font-medium uppercase tracking-wider">
               Soal {currentQuestion + 1} dari {totalQuestions}
             </span>
             <div className="flex gap-1.5">
@@ -234,10 +234,10 @@ export function QuizSection({
                   onClick={() => setCurrentQuestion(i)}
                   className={`w-7 h-7 rounded-lg text-xs font-bold transition-all ${
                     i === currentQuestion
-                      ? "bg-violet-600 text-white scale-110"
+                      ? "bg-blue-700 text-white scale-110"
                       : selectedAnswers[i] !== undefined
                         ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-                        : "bg-white/[0.04] text-zinc-500 hover:bg-white/[0.08]"
+                        : "bg-slate-50 text-slate-500 hover:bg-blue-50"
                   }`}
                 >
                   {i + 1}
@@ -246,7 +246,7 @@ export function QuizSection({
             </div>
           </div>
 
-          <h3 className="text-lg font-semibold text-white mb-6 leading-relaxed">
+          <h3 className="text-lg font-semibold text-slate-900 mb-6 leading-relaxed">
             {question.questionText}
           </h3>
 
@@ -261,22 +261,22 @@ export function QuizSection({
                   onClick={() => handleSelectAnswer(currentQuestion, optIdx)}
                   className={`w-full text-left flex items-center gap-4 p-4 rounded-xl border transition-all duration-200 group ${
                     isSelected
-                      ? "bg-violet-500/10 border-violet-500/40 ring-1 ring-violet-500/20"
-                      : "bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.05] hover:border-white/[0.12]"
+                      ? "bg-blue-50 border-blue-200 ring-1 ring-blue-600/20"
+                      : "bg-white border-slate-200 hover:bg-slate-50 hover:border-slate-300"
                   }`}
                 >
                   <div
                     className={`w-9 h-9 rounded-lg shrink-0 flex items-center justify-center text-sm font-bold transition-all ${
                       isSelected
-                        ? "bg-violet-500 text-white shadow-lg shadow-violet-500/30"
-                        : "bg-white/[0.06] text-zinc-400 group-hover:bg-white/[0.1]"
+                        ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
+                        : "bg-slate-100 text-slate-500 group-hover:bg-white border border-slate-200"
                     }`}
                   >
                     {letter}
                   </div>
                   <span
                     className={`text-sm leading-relaxed ${
-                      isSelected ? "text-white font-medium" : "text-zinc-300"
+                      isSelected ? "text-slate-900 font-semibold" : "text-slate-600"
                     }`}
                   >
                     {option.text}
@@ -290,7 +290,7 @@ export function QuizSection({
             <button
               onClick={handlePrev}
               disabled={currentQuestion === 0}
-              className="px-4 py-2.5 rounded-xl text-sm font-medium border border-white/[0.08] text-zinc-400 hover:text-white hover:bg-white/[0.04] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              className="px-4 py-2.5 rounded-xl text-sm font-medium border border-slate-200 text-slate-400 hover:text-slate-900 hover:bg-slate-50 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
             >
               ← Sebelumnya
             </button>
@@ -299,7 +299,7 @@ export function QuizSection({
               <button
                 onClick={handleNext}
                 disabled={selectedIdx === undefined}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-violet-600 hover:bg-violet-500 text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-blue-700 hover:bg-blue-600 text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               >
                 Selanjutnya
                 <ChevronRight className="w-4 h-4" />
@@ -334,14 +334,14 @@ export function QuizSection({
     const isGood = result.score >= 80;
 
     return (
-      <div className="bg-[#0F0F10] border border-white/[0.08] rounded-2xl overflow-hidden">
+      <div className="bg-white border border-slate-200 shadow-sm rounded-2xl overflow-hidden">
         <div
           className={`p-8 text-center ${
             isPerfect
               ? "bg-gradient-to-br from-amber-500/10 via-transparent to-amber-500/10"
               : isGood
                 ? "bg-gradient-to-br from-emerald-500/10 via-transparent to-emerald-500/10"
-                : "bg-gradient-to-br from-violet-500/10 via-transparent to-violet-500/10"
+                : "bg-gradient-to-br from-blue-600/10 via-transparent to-blue-600/10"
           }`}
         >
           {isPerfect && <div className="text-4xl mb-3 animate-bounce">🏆</div>}
@@ -358,10 +358,10 @@ export function QuizSection({
           >
             {result.score}%
           </div>
-          <p className="text-zinc-400 text-sm">
+          <p className="text-slate-400 text-sm">
             {result.correctAnswers} dari {totalQuestions} jawaban benar
           </p>
-          <p className="text-lg font-semibold text-white mt-2">
+          <p className="text-lg font-semibold text-slate-900 mt-2">
             {isPerfect
               ? "Sempurna! Kamu menguasai materi ini! 🎉"
               : isGood
@@ -385,7 +385,7 @@ export function QuizSection({
         </div>
 
         <div className="p-6 md:p-8 space-y-4">
-          <h4 className="text-sm text-zinc-500 uppercase tracking-wider font-medium mb-4">
+          <h4 className="text-sm text-slate-500 uppercase tracking-wider font-medium mb-4">
             Review Jawaban
           </h4>
           {questions.map((q, i) => {
@@ -410,7 +410,7 @@ export function QuizSection({
                     <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                   )}
                   <div className="min-w-0">
-                    <p className="text-sm text-white font-medium mb-1">
+                    <p className="text-sm text-slate-900 font-medium mb-1">
                       {i + 1}. {q.questionText}
                     </p>
                     {!correct && (
@@ -422,7 +422,7 @@ export function QuizSection({
                       Jawaban benar: {correctOption?.text ?? "—"}
                     </p>
                     {q.explanation && (
-                      <p className="text-xs text-zinc-500 mt-1 italic">
+                      <p className="text-xs text-slate-500 mt-1 italic">
                         💡 {q.explanation}
                       </p>
                     )}
@@ -435,7 +435,7 @@ export function QuizSection({
           <div className="pt-4 flex justify-center">
             <button
               onClick={handleStartQuiz}
-              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/[0.08] text-zinc-300 hover:text-white hover:bg-white/[0.04] text-sm font-medium transition-all"
+              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-all"
             >
               <RotateCcw className="w-4 h-4" />
               Coba Lagi

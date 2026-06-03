@@ -36,8 +36,8 @@ import type { ModuleAccordionInputProps, SanityReference } from "./types";
 function ModuleAccordionInputFallback({ label }: { label: string }) {
   return (
     <div className="space-y-2">
-      <Label className="text-zinc-300">{label}</Label>
-      <Skeleton className="h-24 w-full bg-white/[0.05]" />
+      <Label className="text-slate-300">{label}</Label>
+      <Skeleton className="h-24 w-full bg-slate-50" />
     </div>
   );
 }
@@ -128,7 +128,7 @@ function ModuleAccordionInputField({
 
   return (
     <div className="space-y-3">
-      <Label className="text-zinc-300">{label}</Label>
+      <Label className="text-slate-300">{label}</Label>
 
       {}
       {modules.length > 0 ? (
@@ -152,9 +152,9 @@ function ModuleAccordionInputField({
                   <Suspense
                     key={moduleId}
                     fallback={
-                      <div className="flex items-center gap-2 p-3 border border-white/[0.08] rounded-lg mb-2 bg-white/[0.03]">
-                        <GripVertical className="h-4 w-4 text-zinc-500" />
-                        <Skeleton className="h-4 w-32 flex-1 bg-zinc-700" />
+                      <div className="flex items-center gap-2 p-3 border border-slate-200 rounded-lg mb-2 bg-white">
+                        <GripVertical className="h-4 w-4 text-slate-500" />
+                        <Skeleton className="h-4 w-32 flex-1 bg-slate-700" />
                       </div>
                     }
                   >
@@ -172,7 +172,7 @@ function ModuleAccordionInputField({
           </SortableContext>
         </DndContext>
       ) : (
-        <p className="text-sm text-zinc-500 py-2">No modules added yet</p>
+        <p className="text-sm text-slate-500 py-2">No modules added yet</p>
       )}
 
       {}
@@ -182,15 +182,15 @@ function ModuleAccordionInputField({
             value={selectedModuleToAdd}
             onValueChange={setSelectedModuleToAdd}
           >
-            <SelectTrigger className="flex-1 bg-white/[0.04] border-white/[0.08] text-zinc-300">
+            <SelectTrigger className="flex-1 bg-slate-50 border-slate-200 text-slate-300">
               <SelectValue placeholder="Add module..." />
             </SelectTrigger>
-            <SelectContent className="bg-white/[0.05] border-white/[0.08]">
+            <SelectContent className="bg-slate-50 border-slate-200">
               {availableToAdd.map((doc) => (
                 <SelectItem
                   key={doc.documentId}
                   value={doc.documentId}
-                  className="text-zinc-300 focus:bg-zinc-700 focus:text-white"
+                  className="text-slate-300 focus:bg-slate-700 focus:text-white"
                 >
                   <Suspense fallback={doc.documentId}>
                     <ModuleOptionLabel {...doc} />
@@ -203,7 +203,7 @@ function ModuleAccordionInputField({
             onClick={handleAddModule}
             disabled={!selectedModuleToAdd}
             size="icon"
-            className="bg-violet-600 hover:bg-violet-500 text-white"
+            className="bg-blue-700 hover:bg-blue-600 text-white"
           >
             <Plus className="h-4 w-4" />
           </Button>

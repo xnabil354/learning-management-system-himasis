@@ -110,8 +110,8 @@ function DecoratorButton({
       onClick={() => button.send({ type: "toggle" })}
       className={`h-8 w-8 p-0 ${
         isActive
-          ? "bg-violet-600 text-white hover:bg-violet-700"
-          : "text-zinc-400 hover:text-white hover:bg-zinc-700"
+          ? "bg-blue-700 text-white hover:bg-blue-800"
+          : "text-slate-400 hover:text-slate-900 hover:bg-slate-700"
       }`}
       title={schemaType.name}
     >
@@ -133,8 +133,8 @@ function ListButton({ schemaType }: { schemaType: ToolbarListSchemaType }) {
       onClick={() => button.send({ type: "toggle" })}
       className={`h-8 w-8 p-0 ${
         isActive
-          ? "bg-violet-600 text-white hover:bg-violet-700"
-          : "text-zinc-400 hover:text-white hover:bg-zinc-700"
+          ? "bg-blue-700 text-white hover:bg-blue-800"
+          : "text-slate-400 hover:text-slate-900 hover:bg-slate-700"
       }`}
       title={schemaType.name}
     >
@@ -160,10 +160,10 @@ function StyleSelector({
         selector.send({ type: "toggle", style: value });
       }}
     >
-      <SelectTrigger className="w-[130px] h-8 bg-white/[0.05] border-white/[0.08] text-zinc-300 text-sm">
+      <SelectTrigger className="w-[130px] h-8 bg-slate-50 border-slate-200 text-slate-300 text-sm">
         <SelectValue placeholder="Style" />
       </SelectTrigger>
-      <SelectContent className="bg-white/[0.05] border-white/[0.08]">
+      <SelectContent className="bg-slate-50 border-slate-200">
         {styles.map((style) => {
           const Icon = style.icon as React.ComponentType<{
             className?: string;
@@ -172,7 +172,7 @@ function StyleSelector({
             <SelectItem
               key={style.name}
               value={style.name}
-              className="text-zinc-300 hover:bg-zinc-700 focus:bg-zinc-700"
+              className="text-slate-300 hover:bg-slate-700 focus:bg-slate-700"
             >
               <span className="flex items-center gap-2">
                 {Icon && <Icon className="h-4 w-4" />}
@@ -226,12 +226,12 @@ export function Toolbar({ onInsertImage }: ToolbarProps) {
   };
 
   return (
-    <div className="flex items-center gap-1 p-2 bg-white/[0.02] border-b border-white/[0.08] rounded-t-lg flex-wrap">
+    <div className="flex items-center gap-1 p-2 bg-white border-b border-slate-200 rounded-t-lg flex-wrap">
       {}
       {toolbarSchema.styles && toolbarSchema.styles.length > 0 && (
         <>
           <StyleSelector styles={toolbarSchema.styles} />
-          <div className="w-px h-6 bg-zinc-700 mx-1" />
+          <div className="w-px h-6 bg-slate-700 mx-1" />
         </>
       )}
 
@@ -241,7 +241,7 @@ export function Toolbar({ onInsertImage }: ToolbarProps) {
       ))}
 
       {toolbarSchema.decorators && toolbarSchema.decorators.length > 0 && (
-        <div className="w-px h-6 bg-zinc-700 mx-1" />
+        <div className="w-px h-6 bg-slate-700 mx-1" />
       )}
 
       {}
@@ -250,7 +250,7 @@ export function Toolbar({ onInsertImage }: ToolbarProps) {
       ))}
 
       {toolbarSchema.lists && toolbarSchema.lists.length > 0 && (
-        <div className="w-px h-6 bg-zinc-700 mx-1" />
+        <div className="w-px h-6 bg-slate-700 mx-1" />
       )}
 
       {}
@@ -259,7 +259,7 @@ export function Toolbar({ onInsertImage }: ToolbarProps) {
         variant="ghost"
         size="sm"
         onClick={handleInsertImage}
-        className="h-8 px-2 text-zinc-400 hover:text-white hover:bg-zinc-700"
+        className="h-8 px-2 text-slate-400 hover:text-slate-900 hover:bg-slate-700"
         title="Insert image"
       >
         <ImagePlus className="h-4 w-4 mr-1" />

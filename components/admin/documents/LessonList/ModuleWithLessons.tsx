@@ -37,15 +37,15 @@ export function ModuleWithLessons({
   return (
     <AccordionItem
       value={documentId}
-      className="border-l-2 border-white/[0.08] pl-4 ml-2"
+      className="border-l-2 border-slate-200 pl-4 ml-2"
     >
-      <AccordionTrigger className="py-2 hover:no-underline transition-colors data-[state=open]:text-violet-400">
+      <AccordionTrigger className="py-2 hover:no-underline transition-colors data-[state=open]:text-blue-600">
         <div className="flex items-center gap-2">
-          <Layers className="h-4 w-4 text-violet-400" />
-          <span className="font-medium text-sm text-zinc-300">
+          <Layers className="h-4 w-4 text-blue-600" />
+          <span className="font-medium text-sm text-slate-300">
             {module?.title || "Untitled Module"}
           </span>
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-slate-500">
             ({lessonRefs.length} lesson{lessonRefs.length === 1 ? "" : "s"})
           </span>
         </div>
@@ -56,7 +56,7 @@ export function ModuleWithLessons({
             ref._ref ? (
               <Suspense
                 key={ref._ref}
-                fallback={<Skeleton className="h-12 w-full bg-white/[0.04]" />}
+                fallback={<Skeleton className="h-12 w-full bg-slate-50" />}
               >
                 <div className="py-0.5">
                   <LessonItem

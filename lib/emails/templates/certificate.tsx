@@ -27,7 +27,7 @@ export function CertificateEmail({
       <Body style={main}>
         <Container style={container}>
           <Section style={headerSection}>
-            <Text style={logo}>🎓 SISCA</Text>
+            <Text style={logo}>🎓 SMARTSIS</Text>
             <Text style={subtitle}>HIMASIS E-Learning</Text>
           </Section>
 
@@ -97,7 +97,7 @@ const headerSection = {
 const logo = {
   fontSize: "28px",
   fontWeight: "800" as const,
-  color: "#a78bfa",
+  color: "#60a5fa",
   margin: "0",
 };
 
@@ -151,7 +151,7 @@ const courseCard = {
 const courseTitle_style = {
   fontSize: "16px",
   fontWeight: "600" as const,
-  color: "#a78bfa",
+  color: "#60a5fa",
   margin: "0",
 };
 

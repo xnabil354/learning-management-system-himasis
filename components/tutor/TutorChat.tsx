@@ -65,7 +65,7 @@ export function TutorChat() {
             className="
               w-full
               px-5 py-4 pr-14
-              bg-white/5
+              bg-slate-50
               border border-cyan-500/20
               rounded-xl
               text-white text-base
