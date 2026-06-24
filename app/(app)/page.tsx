@@ -46,7 +46,7 @@ export default async function Home() {
               </div>
 
               <h1 className="text-5xl md:text-9xl font-bold tracking-tighter mb-6 animate-fade-in opacity-0 [animation-delay:200ms] text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-800 to-slate-400">
-                SMARTSIS.
+                SMARTSIS
               </h1>
               <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-8 animate-fade-in opacity-0 [animation-delay:300ms] text-slate-500">
                 Smart Learning System for HIMASIS Students
